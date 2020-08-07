@@ -40,7 +40,7 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
 
 # Load Schemas into Schema Registry
-
+# https://registry-project.readthedocs.io/en/latest/schema-registry.html#api-examples
 # http://edge2ai-1.dim.local:7788/swagger
 
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"test\", \"description\": \"test\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
