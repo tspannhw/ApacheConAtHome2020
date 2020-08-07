@@ -28,7 +28,7 @@ HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 
-impala-shell -i edge2ai-1.dim.local -d default -f sql/kudu.sql 
+impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
 
 curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.local:31000/api/atlas/v2/types/typedefs' \
 --header 'Content-Type: application/json' \
@@ -98,3 +98,7 @@ curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.lo
     ],
     "relationshipDefs": []
 }'
+
+flink-yarn-session -tm 2048 -s 2 -d
+
+flink-sql-client embedded -e ../conf/sql-env.yaml
