@@ -1,0 +1,44 @@
+{
+ "type": "record",
+ "name": "krogerprices",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "upc",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "updatedate",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "itemdescription",
+   "type": "string"
+  },
+  {
+   "name": "brandname",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "price",
+   "type": ["float","null"],
+   "default": 0.00
+  },
+  {
+   "name": "uuid",
+   "type": [
+    "string",
+    "null"
+   ]
+  }
+ ]
+}
