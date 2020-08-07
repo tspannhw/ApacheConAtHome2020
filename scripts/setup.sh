@@ -39,6 +39,9 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 
 impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
 
+# Get Schema Registry URL
+curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/schemas/registryInfo" -H "accept: application/json"
+
 # Load Schemas into Schema Registry
 # https://registry-project.readthedocs.io/en/latest/schema-registry.html#api-examples
 # http://edge2ai-1.dim.local:7788/swagger
@@ -136,6 +139,9 @@ curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connecto
 
 # Check Service
 curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors" -H "accept: application/json"
+
+# Check KC Metrics
+curl -X GET "http://ec2-54-167-28-79.compute-1.amazonaws.com:8585/api/v1/admin/metrics/connect/workers" -H "accept: application/json"
 
 # Flink SQL
 
