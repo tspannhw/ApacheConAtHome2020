@@ -126,7 +126,10 @@ curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.lo
 
 # Is Kafka Connect Configured
 # TODO check = false
-curl -X GET "http://ec2-54-167-28-79.compute-1.amazonaws.com:8585/api/v1/admin/kafka-connect/is-configured" -H "accept: application/json"
+curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/is-configured" -H "accept: application/json"
+
+# Check to see if HDFS Sink is there
+curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connector-plugins" -H "accept: application/json"
 
 # load that file TODO
 curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/itemprice" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"connector.class\": \"com.cloudera.dim.kafka.connect.hdfs.HdfsSinkConnector\", \"hdfs.uri\": \"hdfs://edge2ai-1.dim.local:8020\", \"tasks.max\": \"1\", \"topics\": \"itemprice\", \"value.converter.schema.registry.url\": \"http://edge2ai-1.dim.local:7788/api/v1\", \"value.converter.passthrough.enabled\": \"true\", \"hdfs.output\": \"/tmp/itemprice/\", \"output.avro.passthrough.enabled\": \"true\", \"hadoop.conf.path\": \"file:///etc/hadoop/conf\", \"name\": \"itemprice\", \"output.writer\": \"com.cloudera.dim.kafka.connect.partition.writers.avro.AvroPartitionWriter\", \"value.converter\": \"com.cloudera.dim.kafka.connect.converts.AvroConverter\", \"output.storage\": \"com.cloudera.dim.kafka.connect.hdfs.HdfsPartitionStorage\", \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\"}"
