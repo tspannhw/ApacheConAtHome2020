@@ -76,9 +76,6 @@ curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/schemas/registryInfo" 
 
 echo ""
 echo ""
-echo "-- Schema URL --"
-echo ""
-echo ""
 
 # Load Schemas into Schema Registry
 # https://registry-project.readthedocs.io/en/latest/schema-registry.html#api-examples
@@ -89,16 +86,12 @@ curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H 
 
 echo ""
 echo ""
-echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
-echo "Uploaded schema"
-echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
-echo ""
-echo ""
 
 # Upload body
-# /test/ - schema name
+# /itemprice/ - schema name
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/schemas/itemprice.avsc;type=application/json" -F "description=itemprice"
 
+echo ""
 echo ""
 echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
 echo "Integrate Flink and Atlas"
