@@ -45,6 +45,8 @@ impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql
 
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"test\", \"description\": \"test\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
 
+# Upload body
+curl -vX POST http://server/api/v1/places.json -d @../schemas/test.avsc --header "Content-Type: application/json"
 
 # Atlas Flink Integration
 
