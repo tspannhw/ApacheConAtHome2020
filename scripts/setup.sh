@@ -119,6 +119,15 @@ curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.lo
     "relationshipDefs": []
 }'
 
+# Kafka Connect
+# https://docs.cloudera.com/runtime/7.2.0/smm-rest-api-reference/index.html#/Kafka_Connect_operations
+# Uses SMM REST API
+# http://edge2ai-1.dim.local:8585/swagger
+
+curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/itemprice" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"connector.class\": \"com.cloudera.dim.kafka.connect.hdfs.HdfsSinkConnector\", \"hdfs.uri\": \"hdfs://edge2ai-1.dim.local:8020\", \"tasks.max\": \"1\", \"topics\": \"itemprice\", \"value.converter.schema.registry.url\": \"http://edge2ai-1.dim.local:7788/api/v1\", \"value.converter.passthrough.enabled\": \"true\", \"hdfs.output\": \"/tmp/itemprice/\", \"output.avro.passthrough.enabled\": \"true\", \"hadoop.conf.path\": \"file:///etc/hadoop/conf\", \"name\": \"itemprice\", \"output.writer\": \"com.cloudera.dim.kafka.connect.partition.writers.avro.AvroPartitionWriter\", \"value.converter\": \"com.cloudera.dim.kafka.connect.converts.AvroConverter\", \"output.storage\": \"com.cloudera.dim.kafka.connect.hdfs.HdfsPartitionStorage\", \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\"}"
+
+# Flink SQL
+
 flink-yarn-session -tm 2048 -s 2 -d
 
 flink-sql-client embedded -e ../conf/sql-env.yaml
