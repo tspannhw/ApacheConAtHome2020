@@ -61,6 +61,17 @@ echo ""
 
 impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
 
+# Postgresql Tables
+# Phoenix Tables
+# Druid Tables
+# HBase Tables
+# MySQL Tables
+# External ORC Hive Tables
+# Parquet Impala Tables
+# CREATE EXTERNAL TABLE ingest_existing_files LIKE PARQUET '/user/etl/destination/datafile1.dat'
+#  STORED AS PARQUET
+#  LOCATION '/user/etl/destination';
+  
 echo ""
 echo ""
 echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
