@@ -1,13 +1,16 @@
+clear
+
 echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 echo "┃ Starting to create all the demo   ┃"
 echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
 echo ""
 echo ""
 echo "⏱  $(date +%H%Mhrs)"
+echo ""
+echo ""
 
 # Repos
 
-clear
 
 yum -y install git curl wget
 
@@ -46,8 +49,15 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 
 impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
 
+#
 # Get Schema Registry URL
 curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/schemas/registryInfo" -H "accept: application/json"
+
+echo ""
+echo ""
+echo "-- Scheam URL --"
+echo ""
+echo ""
 
 # Load Schemas into Schema Registry
 # https://registry-project.readthedocs.io/en/latest/schema-registry.html#api-examples
@@ -56,11 +66,20 @@ curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/schemas/registryInfo" 
 # upload schema name
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"itemprice\", \"description\": \"itemprice\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
 
+echo ""
+echo ""
+echo "Uploaded itemprice"
+echo ""
+
 # Upload body
 # /test/ - schema name
-curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=../schemas/@itemprice.avsc;type=application/json" -F "description=test"
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/schemas/itemprice.avsc;type=application/json" -F "description=itemprice"
 
-# curl -vX POST http://server/api/v1/places.json -d @../schemas/test.avsc --header "Content-Type: application/json"
+echo ""
+echo ""
+echo "Integrate Flink and Atlas"
+echo ""
+echo ""
 
 # Atlas Flink Integration
 
@@ -159,3 +178,8 @@ curl -X GET "http://ec2-54-167-28-79.compute-1.amazonaws.com:8585/api/v1/admin/m
 flink-yarn-session -tm 2048 -s 2 -d
 
 flink-sql-client embedded -e ../conf/sql-env.yaml
+
+echo ""
+echo "Completed."
+echo ""
+echo "⏱  $(date +%H%Mhrs)"
