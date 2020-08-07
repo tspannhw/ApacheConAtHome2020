@@ -1,0 +1,16 @@
+configuration:
+  execution.target: yarn-session
+
+catalogs:
+  - name: registry
+    type: cloudera-registry
+    # Registry Client standard properties
+    registry.properties.schema.registry.url: http://edge2ai-1.dim.local:7788/api/v1
+    # registry.properties.key: 
+    # Registry Client SSL properties
+    # Kafka Connector properties
+    connector.properties.bootstrap.servers: edge2ai-1.dim.local:9092
+    connector.startup-mode: earliest-offset
+  - name: kudu
+    type: kudu
+    kudu.masters: edge2ai-1.dim.local:7051
