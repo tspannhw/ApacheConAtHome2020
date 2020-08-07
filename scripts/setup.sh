@@ -209,7 +209,9 @@ echo ""
 echo ""
 
 # load that file TODO
-curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/itemprice" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"connector.class\": \"com.cloudera.dim.kafka.connect.hdfs.HdfsSinkConnector\", \"hdfs.uri\": \"hdfs://edge2ai-1.dim.local:8020\", \"tasks.max\": \"1\", \"topics\": \"itemprice\", \"value.converter.schema.registry.url\": \"http://edge2ai-1.dim.local:7788/api/v1\", \"value.converter.passthrough.enabled\": \"true\", \"hdfs.output\": \"/tmp/itemprice/\", \"output.avro.passthrough.enabled\": \"true\", \"hadoop.conf.path\": \"file:///etc/hadoop/conf\", \"name\": \"itemprice\", \"output.writer\": \"com.cloudera.dim.kafka.connect.partition.writers.avro.AvroPartitionWriter\", \"value.converter\": \"com.cloudera.dim.kafka.connect.converts.AvroConverter\", \"output.storage\": \"com.cloudera.dim.kafka.connect.hdfs.HdfsPartitionStorage\", \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\"}"
+# itemprice is connector name
+
+curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/itemprice" -H "accept: application/json" -H "Content-Type: application/json" -d @/opt/demo/kafkaconnect/itemprice.json
 
 echo ""
 echo ""
@@ -237,7 +239,7 @@ flink-yarn-session -tm 2048 -s 2 -d
 
 # Starts Flink SQL
 
-# flink-sql-client embedded -e ../conf/sql-env.yaml
+# flink-sql-client embedded -e /opt/demo/conf/sql-env.yaml
 
 echo ""
 echo ""
