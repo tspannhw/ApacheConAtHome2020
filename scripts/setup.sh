@@ -15,7 +15,6 @@ echo ""
 
 # Repos
 
-
 yum -y install git curl wget
 
 cd /tmp/resources
