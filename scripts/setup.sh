@@ -46,10 +46,14 @@ curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/schemas/registryInfo" 
 # https://registry-project.readthedocs.io/en/latest/schema-registry.html#api-examples
 # http://edge2ai-1.dim.local:7788/swagger
 
+# upload schema name
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"test\", \"description\": \"test\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
 
 # Upload body
-curl -vX POST http://server/api/v1/places.json -d @../schemas/test.avsc --header "Content-Type: application/json"
+# /test/ - schema name
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/test/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@itemprice.avsc.txt;type=application/json" -F "description=test"
+
+# curl -vX POST http://server/api/v1/places.json -d @../schemas/test.avsc --header "Content-Type: application/json"
 
 # Atlas Flink Integration
 
