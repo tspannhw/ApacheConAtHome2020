@@ -1,0 +1,16 @@
+{
+ "connector.class": "com.cloudera.dim.kafka.connect.hdfs.HdfsSinkConnector",
+ "hdfs.uri": "hdfs://edge2ai-1.dim.local:8020",
+ "tasks.max": "1",
+ "topics": "itemprice",
+ "value.converter.schema.registry.url": "http://edge2ai-1.dim.local:7788/api/v1",
+ "value.converter.passthrough.enabled": "true",
+ "hdfs.output": "/tmp/itemprice/",
+ "output.avro.passthrough.enabled": "true",
+ "hadoop.conf.path": "file:///etc/hadoop/conf",
+ "name": "itemprice",
+ "output.writer": "com.cloudera.dim.kafka.connect.partition.writers.avro.AvroPartitionWriter",
+ "value.converter": "com.cloudera.dim.kafka.connect.converts.AvroConverter",
+ "output.storage": "com.cloudera.dim.kafka.connect.hdfs.HdfsPartitionStorage",
+ "key.converter": "org.apache.kafka.connect.storage.StringConverter"
+}
