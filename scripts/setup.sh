@@ -3,9 +3,13 @@ clear
 echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 echo "┃ Starting to create all the demo   ┃"
 echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+echo " *** Thanks Paul Vidal *** "
+echo " *** Thanks Andre *** "
+echo " *** Thanks Dan ***"
 echo ""
-echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
 echo "⏱  $(date +%H%Mhrs)"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
 echo ""
 echo ""
 
@@ -45,9 +49,27 @@ HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo " Building Kudu Impala Tables"
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo ""
+
 # Build Kudu tables
 
 impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
+
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo " Building Schemas"
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo ""
 
 #
 # Get Schema Registry URL
@@ -55,7 +77,7 @@ curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/schemas/registryInfo" 
 
 echo ""
 echo ""
-echo "-- Scheam URL --"
+echo "-- Schema URL --"
 echo ""
 echo ""
 
@@ -68,7 +90,10 @@ curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H 
 
 echo ""
 echo ""
-echo "Uploaded itemprice"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo "Uploaded schema"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
 echo ""
 
 # Upload body
@@ -76,9 +101,9 @@ echo ""
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/schemas/itemprice.avsc;type=application/json" -F "description=itemprice"
 
 echo ""
-echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
 echo "Integrate Flink and Atlas"
-echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
 echo ""
 
 # Atlas Flink Integration
@@ -157,6 +182,14 @@ curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.lo
 # Uses SMM REST API
 # http://edge2ai-1.dim.local:8585/swagger
 
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo "Kafka Connect"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo ""
+
 # Is Kafka Connect Configured
 # TODO check = false
 curl -X GET "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/is-configured" -H "accept: application/json"
@@ -180,6 +213,10 @@ flink-yarn-session -tm 2048 -s 2 -d
 flink-sql-client embedded -e ../conf/sql-env.yaml
 
 echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
 echo "Completed."
 echo ""
 echo "⏱  $(date +%H%Mhrs)"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
