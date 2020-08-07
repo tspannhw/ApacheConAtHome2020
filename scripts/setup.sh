@@ -1,16 +1,23 @@
-# Gits
-
+# Repos
 
 clear
+
+yum -y install git curl wget
+
+cd /tmp/resources
+./reset-to-lab.sh 12
+
 cd /opt/demo
-yum -y install git
+
 git clone https://github.com/tspannhw/meetup-sensors
 git clone https://github.com/tspannhw/FlinkSQLDemo
 git clone https://github.com/tspannhw/ApacheConAtHome2020
+git clone https://github.com/tspannhw/retail-dynamic-shelf-pricing
 
 chmod -R 777 /opt/demo/FlinkSQLDemo
 chmod -R 777 /opt/demo/meetup-sensors
 chmod -R 777 /opt/demo/ApacheConAtHome2020
+chmod -R 777 /opt/demo/retail-dynamic-shelf-pricing
 
 # No Kerberos 
 
@@ -28,7 +35,18 @@ HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 
+# Build Kudu tables
+
 impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
+
+# Load Schemas into Schema Registry
+
+# http://edge2ai-1.dim.local:7788/swagger
+
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"test\", \"description\": \"test\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
+
+
+# Atlas Flink Integration
 
 curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.local:31000/api/atlas/v2/types/typedefs' \
 --header 'Content-Type: application/json' \
