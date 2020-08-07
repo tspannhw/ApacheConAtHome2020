@@ -1,0 +1,47 @@
+{
+ "type": "record",
+ "name": "itemprice",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "upc",
+   "type": "string"
+  },
+  {
+   "name": "originstore",
+   "type": "string"
+  },
+  {
+   "name": "updatedate",
+   "type": "string"
+  },
+  {
+   "name": "longdescription",
+   "type": "string"
+  },
+  {
+   "name": "itemdescription",
+   "type": "string"
+  },
+  {
+   "name": "brandname",
+   "type": "string"
+  },
+  {
+   "name": "displayimage",
+   "type": "string"
+  },
+  {
+   "name": "price",
+   "type": "string"
+  },
+  {
+   "name": "msrp",
+   "type": "string"
+  },
+  {
+   "name": "tpr",
+   "type": "string"
+  }
+ ]
+}
