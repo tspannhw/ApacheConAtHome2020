@@ -17,8 +17,12 @@ echo ""
 
 yum -y install git curl wget
 
+# Andre's script 
+
 cd /tmp/resources
 ./reset-to-lab.sh 12
+
+# Created for edge2ai
 
 cd /opt/demo
 
@@ -34,6 +38,15 @@ chmod -R 777 /opt/demo/retail-dynamic-shelf-pricing
 
 # No Kerberos 
 
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo " Build HDFS Directories"
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo ""
+
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /user/admin
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /user/root
 HADOOP_USER_NAME=hdfs hdfs dfs -chown root:root /user/root
@@ -47,6 +60,8 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/sensors
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
+
+cd /opt/demo/ApacheConAtHome2020
 
 echo ""
 echo ""
@@ -100,7 +115,7 @@ echo ""
 
 # Upload body
 # /itemprice/ - schema name
-curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/schemas/itemprice.avsc;type=application/json" -F "description=itemprice"
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/ApacheConAtHome2020/schemas/itemprice.avsc;type=application/json" -F "description=itemprice"
 
 echo ""
 echo ""
@@ -214,7 +229,7 @@ echo ""
 # load that file TODO
 # itemprice is connector name
 
-curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/itemprice" -H "accept: application/json" -H "Content-Type: application/json" -d @/opt/demo/kafkaconnect/itemprice.json
+curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/itemprice" -H "accept: application/json" -H "Content-Type: application/json" -d @/opt/demo/ApacheConAtHome2020/kafkaconnect/itemprice.json
 
 echo ""
 echo ""
@@ -236,7 +251,7 @@ echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔�
 echo ""
 echo ""
 
-# Flink SQL
+# Flink SQL Session
 
 flink-yarn-session -tm 2048 -s 2 -d
 
