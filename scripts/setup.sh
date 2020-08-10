@@ -13,6 +13,12 @@ echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔�
 echo ""
 echo ""
 
+# TODO
+# Build NiFi Atlas Connection
+# Add NiFi SQL Reporting Tasks for JVM, Provenance, ...
+# Add NiFi HTTP Listener for Kafka Alerts
+# Build Kafka Alerts / Notifier
+
 # Repos
 
 yum -y install git curl wget
