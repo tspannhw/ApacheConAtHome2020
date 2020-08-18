@@ -1,1 +1,1 @@
-flink-sql-client embedded -e ../conf/sql-env.yaml
+flink-sql-client embedded -e /opt/demo/ApacheConAtHome2020/conf/sql-env.yaml
