@@ -80,7 +80,7 @@ echo ""
 
 # Build Kudu tables
 
-impala-shell -i edge2ai-1.dim.local -d default -f ../sql/kudu.sql 
+impala-shell -i edge2ai-1.dim.local -d default -f  /opt/demo/ApacheConAtHome2020/sql/kudu.sql 
 
 # Postgresql Tables
 # Phoenix Tables
@@ -217,6 +217,8 @@ echo ""
 
 /opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic scada
 
+/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic itemprice
+
 # Kafka Connect
 # https://docs.cloudera.com/runtime/7.2.0/smm-rest-api-reference/index.html#/Kafka_Connect_operations
 # Uses SMM REST API
@@ -279,7 +281,7 @@ flink-yarn-session -tm 2048 -s 2 -d
 
 # Starts Flink SQL
 
-# flink-sql-client embedded -e /opt/demo/conf/sql-env.yaml
+# flink-sql-client embedded -e /opt/demo/ApacheConAtHome2020/conf/sql-env.yaml
 
 echo ""
 echo ""
