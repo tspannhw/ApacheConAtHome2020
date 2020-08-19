@@ -116,12 +116,17 @@ echo ""
 # upload schema name
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"itemprice\", \"description\": \"itemprice\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
 
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"krogerprices\", \"description\": \"itemprice\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
+
 echo ""
 echo ""
 
 # Upload body
 # /itemprice/ - schema name
 curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/ApacheConAtHome2020/schemas/itemprice.avsc;type=application/json" -F "description=itemprice"
+
+# krogerprices.avsc
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/krogerprices/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/ApacheConAtHome2020/schemas/krogerprices.avsc;type=application/json" -F "description=itemprice"
 
 echo ""
 echo ""
