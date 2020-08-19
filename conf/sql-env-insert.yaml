@@ -1,0 +1,23 @@
+configuration:
+  execution.target: yarn-session
+
+catalogs:
+  - name: registry
+    type: cloudera-registry
+    # Registry Client standard properties
+    registry.properties.schema.registry.url: http://edge2ai-1.dim.local:7788/api/v1
+    # registry.properties.key: 
+    # Registry Client SSL properties
+    # Kafka Connector properties
+    connector.properties.bootstrap.servers: edge2ai-1.dim.local:9092
+    connector.startup-mode: earliest-offset
+  - name: kudu
+    type: kudu
+    kudu.masters: edge2ai-1.dim.local:7051
+
+execution:
+  planner: blink                    # optional: either 'blink' (default) or 'old'
+  type: streaming                   # required: execution mode either 'batch' or 'streaming'
+  result-mode: changelog            # required: either 'table' or 'changelog'
+  parallelism: 1                    # optional: Flink's parallelism (1 by default)
+  current-catalog: registry         # optional: name of the current catalog of the session ('default_catalog' by default)
