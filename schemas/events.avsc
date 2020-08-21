@@ -1,0 +1,427 @@
+{
+  "type" : "record",
+  "name" : "AnonType_eventUpdates",
+  "fields" : [ {
+    "name" : "eventUpdate",
+    "type" : {
+      "type" : "record",
+      "name" : "AnonType_eventUpdateeventUpdates",
+      "fields" : [ {
+        "name" : "EventID",
+        "type" : "string",
+        "source" : "element EventID"
+      }, {
+        "name" : "AssociatedEventID",
+        "type" : "string",
+        "source" : "element AssociatedEventID"
+      }, {
+        "name" : "EventClass",
+        "type" : "string",
+        "source" : "element EventClass"
+      }, {
+        "name" : "EventState",
+        "type" : "int",
+        "source" : "element EventState"
+      }, {
+        "name" : "StartDateTime",
+        "type" : "string",
+        "source" : "element StartDateTime"
+      }, {
+        "name" : "EndDateTime",
+        "type" : "string",
+        "source" : "element EndDateTime"
+      }, {
+        "name" : "EstDurationInMinutes",
+        "type" : "int",
+        "source" : "element EstDurationInMinutes"
+      }, {
+        "name" : "LastUpdate",
+        "type" : "string",
+        "source" : "element LastUpdate"
+      }, {
+        "name" : "EventTypes",
+        "type" : {
+          "type" : "record",
+          "name" : "AnonType_EventTypeseventUpdateeventUpdates",
+          "fields" : [ {
+            "name" : "EventType",
+            "type" : {
+              "type" : "array",
+              "items" : "string"
+            },
+            "source" : "element EventType"
+          } ]
+        },
+        "source" : "element EventTypes"
+      }, {
+        "name" : "LaneDetails",
+        "type" : {
+          "type" : "record",
+          "name" : "AnonType_LaneDetailseventUpdateeventUpdates",
+          "fields" : [ {
+            "name" : "LanesAffectedCount",
+            "type" : "string",
+            "source" : "element LanesAffectedCount"
+          }, {
+            "name" : "LanesTotalCount",
+            "type" : "string",
+            "source" : "element LanesTotalCount"
+          }, {
+            "name" : "LanesDetail",
+            "type" : "string",
+            "source" : "element LanesDetail"
+          }, {
+            "name" : "LanesStatus",
+            "type" : "string",
+            "source" : "element LanesStatus"
+          } ]
+        },
+        "source" : "element LaneDetails"
+      }, {
+        "name" : "SummaryDescription",
+        "type" : "string",
+        "source" : "element SummaryDescription"
+      }, {
+        "name" : "ReportingOrg",
+        "type" : "long",
+        "source" : "element ReportingOrg"
+      }, {
+        "name" : "EventLocationInfo",
+        "type" : {
+          "type" : "record",
+          "name" : "AnonType_EventLocationInfoeventUpdateeventUpdates",
+          "fields" : [ {
+            "name" : "Facility",
+            "type" : "string",
+            "source" : "element Facility"
+          }, {
+            "name" : "Direction",
+            "type" : "string",
+            "source" : "element Direction"
+          }, {
+            "name" : "City",
+            "type" : "string",
+            "source" : "element City"
+          }, {
+            "name" : "County",
+            "type" : "string",
+            "source" : "element County"
+          }, {
+            "name" : "State",
+            "type" : "string",
+            "source" : "element State"
+          }, {
+            "name" : "LocationDetails",
+            "type" : {
+              "type" : "record",
+              "name" : "AnonType_LocationDetailsEventLocationInfoeventUpdateeventUpdates",
+              "fields" : [ {
+                "name" : "LocationItem",
+                "type" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "AnonType_LocationItemLocationDetailsEventLocationInfoeventUpdateeventUpdates",
+                    "fields" : [ {
+                      "name" : "Intersections",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_IntersectionsLocationItemLocationDetailsEventLocationInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "PrimaryLoc",
+                          "type" : "string",
+                          "source" : "element PrimaryLoc"
+                        }, {
+                          "name" : "SecondaryLoc",
+                          "type" : "string",
+                          "source" : "element SecondaryLoc"
+                        }, {
+                          "name" : "Article",
+                          "type" : "string",
+                          "source" : "element Article"
+                        } ]
+                      },
+                      "source" : "element Intersections"
+                    }, {
+                      "name" : "PointCoordinates",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_PointCoordinatesLocationItemLocationDetailsEventLocationInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "Lat",
+                          "type" : "double",
+                          "source" : "element Lat"
+                        }, {
+                          "name" : "Lon",
+                          "type" : "double",
+                          "source" : "element Lon"
+                        }, {
+                          "name" : "_Datum",
+                          "type" : [ "null", "string" ],
+                          "default" : null,
+                          "source" : "attribute Datum"
+                        } ]
+                      },
+                      "source" : "element PointCoordinates"
+                    }, {
+                      "name" : "RoadMarkers",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_RoadMarkersLocationItemLocationDetailsEventLocationInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "PrimaryMarker",
+                          "type" : "float",
+                          "source" : "element PrimaryMarker"
+                        }, {
+                          "name" : "SecondaryMarker",
+                          "type" : "float",
+                          "source" : "element SecondaryMarker"
+                        }, {
+                          "name" : "Article",
+                          "type" : "string",
+                          "source" : "element Article"
+                        }, {
+                          "name" : "_Units",
+                          "type" : [ "null", "string" ],
+                          "default" : null,
+                          "source" : "attribute Units"
+                        } ]
+                      },
+                      "source" : "element RoadMarkers"
+                    }, {
+                      "name" : "AssociatedCities",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_AssociatedCitiesLocationItemLocationDetailsEventLocationInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "PrimaryCity",
+                          "type" : "string",
+                          "source" : "element PrimaryCity"
+                        }, {
+                          "name" : "SecondaryCity",
+                          "type" : "string",
+                          "source" : "element SecondaryCity"
+                        }, {
+                          "name" : "Article",
+                          "type" : "string",
+                          "source" : "element Article"
+                        } ]
+                      },
+                      "source" : "element AssociatedCities"
+                    }, {
+                      "name" : "RegionCoordinates",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_RegionCoordinatesLocationItemLocationDetailsEventLocationInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "Closed",
+                          "type" : "string",
+                          "source" : "element Closed"
+                        }, {
+                          "name" : "Point",
+                          "type" : {
+                            "type" : "record",
+                            "name" : "AnonType_PointRegionCoordinatesLocationItemLocationDetailsEventLocationInfoeventUpdateeventUpdates",
+                            "fields" : [ {
+                              "name" : "Lat",
+                              "type" : "double",
+                              "source" : "element Lat"
+                            }, {
+                              "name" : "Lon",
+                              "type" : "double",
+                              "source" : "element Lon"
+                            } ]
+                          },
+                          "source" : "element Point"
+                        } ]
+                      },
+                      "source" : "element RegionCoordinates"
+                    } ]
+                  }
+                },
+                "source" : "element LocationItem"
+              } ]
+            },
+            "source" : "element LocationDetails"
+          } ]
+        },
+        "source" : "element EventLocationInfo"
+      }, {
+        "name" : "Comments",
+        "type" : {
+          "type" : "record",
+          "name" : "AnonType_CommentseventUpdateeventUpdates",
+          "fields" : [ {
+            "name" : "CommentInfo",
+            "type" : {
+              "type" : "record",
+              "name" : "AnonType_CommentInfoCommentseventUpdateeventUpdates",
+              "fields" : [ {
+                "name" : "Comment",
+                "type" : {
+                  "type" : "array",
+                  "items" : "string"
+                },
+                "source" : "element Comment"
+              } ]
+            },
+            "source" : "element CommentInfo"
+          } ]
+        },
+        "source" : "element Comments"
+      }, {
+        "name" : "AdditionalData",
+        "type" : {
+          "type" : "record",
+          "name" : "AnonType_AdditionalDataeventUpdateeventUpdates",
+          "fields" : [ {
+            "name" : "DataItem",
+            "type" : {
+              "type" : "array",
+              "items" : {
+                "type" : "record",
+                "name" : "AnonType_DataItemAdditionalDataeventUpdateeventUpdates",
+                "fields" : [ {
+                  "name" : "Type",
+                  "type" : "string",
+                  "source" : "element Type"
+                }, {
+                  "name" : "Data",
+                  "type" : "string",
+                  "source" : "element Data"
+                } ]
+              }
+            },
+            "source" : "element DataItem"
+          } ]
+        },
+        "source" : "element AdditionalData"
+      }, {
+        "name" : "ScheduleInfo",
+        "type" : {
+          "type" : "record",
+          "name" : "AnonType_ScheduleInfoeventUpdateeventUpdates",
+          "fields" : [ {
+            "name" : "Schedules",
+            "type" : {
+              "type" : "record",
+              "name" : "AnonType_SchedulesScheduleInfoeventUpdateeventUpdates",
+              "fields" : [ {
+                "name" : "Schedule",
+                "type" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "AnonType_ScheduleSchedulesScheduleInfoeventUpdateeventUpdates",
+                    "fields" : [ {
+                      "name" : "ScheduleID",
+                      "type" : "string",
+                      "source" : "element ScheduleID"
+                    }, {
+                      "name" : "ScheduleStartDateTime",
+                      "type" : "string",
+                      "source" : "element ScheduleStartDateTime"
+                    }, {
+                      "name" : "ScheduleEndDateTime",
+                      "type" : "string",
+                      "source" : "element ScheduleEndDateTime"
+                    }, {
+                      "name" : "Continuous",
+                      "type" : "string",
+                      "source" : "element Continuous"
+                    }, {
+                      "name" : "ActiveDays",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_ActiveDaysScheduleSchedulesScheduleInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "DayOfWeek",
+                          "type" : {
+                            "type" : "array",
+                            "items" : "string"
+                          },
+                          "source" : "element DayOfWeek"
+                        } ]
+                      },
+                      "source" : "element ActiveDays"
+                    }, {
+                      "name" : "ScheduleLaneDetails",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_ScheduleLaneDetailsScheduleSchedulesScheduleInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "LanesAffectedCount",
+                          "type" : "string",
+                          "source" : "element LanesAffectedCount"
+                        }, {
+                          "name" : "LanesTotalCount",
+                          "type" : "string",
+                          "source" : "element LanesTotalCount"
+                        }, {
+                          "name" : "LanesDetail",
+                          "type" : "string",
+                          "source" : "element LanesDetail"
+                        }, {
+                          "name" : "LanesStatus",
+                          "type" : "string",
+                          "source" : "element LanesStatus"
+                        } ]
+                      },
+                      "source" : "element ScheduleLaneDetails"
+                    }, {
+                      "name" : "ScheduleAdditionalData",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "AnonType_ScheduleAdditionalDataScheduleSchedulesScheduleInfoeventUpdateeventUpdates",
+                        "fields" : [ {
+                          "name" : "DataItem",
+                          "type" : {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "record",
+                              "name" : "AnonType_DataItemScheduleAdditionalDataScheduleSchedulesScheduleInfoeventUpdateeventUpdates",
+                              "fields" : [ {
+                                "name" : "Type",
+                                "type" : "string",
+                                "source" : "element Type"
+                              }, {
+                                "name" : "Data",
+                                "type" : "string",
+                                "source" : "element Data"
+                              } ]
+                            }
+                          },
+                          "source" : "element DataItem"
+                        } ]
+                      },
+                      "source" : "element ScheduleAdditionalData"
+                    } ]
+                  }
+                },
+                "source" : "element Schedule"
+              } ]
+            },
+            "source" : "element Schedules"
+          } ]
+        },
+        "source" : "element ScheduleInfo"
+      } ]
+    },
+    "source" : "element eventUpdate"
+  }, {
+    "name" : "_Timestamp",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "source" : "attribute Timestamp"
+  }, {
+    "name" : "_MsgType",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "source" : "attribute MsgType"
+  }, {
+    "name" : "_SchemaVersion",
+    "type" : [ "null", "float" ],
+    "default" : null,
+    "source" : "attribute SchemaVersion"
+  } ]
+}

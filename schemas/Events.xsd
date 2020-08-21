@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="eventUpdates">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="eventUpdate">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="EventID" />
+							<xs:element type="xs:string" name="AssociatedEventID" />
+							<xs:element type="xs:integer" name="EventClass" />
+							<xs:element type="xs:short" name="EventState" />
+							<xs:element type="xs:dateTime" name="StartDateTime" />
+							<xs:element type="xs:dateTime" name="EndDateTime" />
+							<xs:element type="xs:short" name="EstDurationInMinutes" />
+							<xs:element type="xs:dateTime" name="LastUpdate" />
+							<xs:element name="EventTypes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="EventType" maxOccurs="unbounded" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="LaneDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:integer" name="LanesAffectedCount" />
+										<xs:element type="xs:integer" name="LanesTotalCount" />
+										<xs:element type="xs:string" name="LanesDetail" />
+										<xs:element type="xs:string" name="LanesStatus" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element type="xs:string" name="SummaryDescription" />
+							<xs:element type="xs:long" name="ReportingOrg" />
+							<xs:element name="EventLocationInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="Facility" />
+										<xs:element type="xs:string" name="Direction" />
+										<xs:element type="xs:string" name="City" />
+										<xs:element type="xs:string" name="County" />
+										<xs:element type="xs:string" name="State" />
+										<xs:element name="LocationDetails">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="LocationItem" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Intersections">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="PrimaryLoc" />
+																			<xs:element type="xs:string" name="SecondaryLoc" />
+																			<xs:element type="xs:string" name="Article" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="PointCoordinates">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:double" name="Lat" />
+																			<xs:element type="xs:double" name="Lon" />
+																		</xs:sequence>
+																		<xs:attribute type="xs:string" name="Datum" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="RoadMarkers">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:float" name="PrimaryMarker" />
+																			<xs:element type="xs:float" name="SecondaryMarker" />
+																			<xs:element type="xs:string" name="Article" />
+																		</xs:sequence>
+																		<xs:attribute type="xs:string" name="Units" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="AssociatedCities">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="PrimaryCity" />
+																			<xs:element type="xs:string" name="SecondaryCity" />
+																			<xs:element type="xs:string" name="Article" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="RegionCoordinates">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="Closed" />
+																			<xs:element name="Point">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:double" name="Lat" />
+																						<xs:element type="xs:double" name="Lon" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Comments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CommentInfo">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="Comment" maxOccurs="unbounded" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AdditionalData">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DataItem" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="Type" />
+													<xs:element type="xs:string" name="Data" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ScheduleInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Schedules">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Schedule" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:integer" name="ScheduleID" />
+																<xs:element type="xs:dateTime" name="ScheduleStartDateTime" />
+																<xs:element type="xs:dateTime" name="ScheduleEndDateTime" />
+																<xs:element type="xs:string" name="Continuous" />
+																<xs:element name="ActiveDays">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="DayOfWeek" maxOccurs="unbounded" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="ScheduleLaneDetails">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:integer" name="LanesAffectedCount" />
+																			<xs:element type="xs:integer" name="LanesTotalCount" />
+																			<xs:element type="xs:string" name="LanesDetail" />
+																			<xs:element type="xs:string" name="LanesStatus" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="ScheduleAdditionalData">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="DataItem" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="Type" />
+																						<xs:element type="xs:string" name="Data" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:dateTime" name="Timestamp" />
+			<xs:attribute type="xs:string" name="MsgType" />
+			<xs:attribute type="xs:float" name="SchemaVersion" fixed="1.0" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
