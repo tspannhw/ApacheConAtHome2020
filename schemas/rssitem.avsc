@@ -1,0 +1,23 @@
+{
+ "type": "record",
+ "name": "rssitem",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "title",
+   "type": ["string","null"]
+  },
+  {
+   "name": "description",
+   "type": ["string","null"]
+  },
+  {
+   "name": "pubDate",
+   "type": ["string","null"]
+  },
+  {
+   "name": "point",
+   "type": ["string","null"]
+  }
+ ]
+}
