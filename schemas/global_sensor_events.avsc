@@ -1,0 +1,72 @@
+{
+ "type": "record",
+ "name": "global_sensor_events",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "uuid",
+   "type": ["string","null"]
+  },
+  {
+   "name": "systemtime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "temperaturef",
+   "type": ["string","null"]
+  },
+  {
+   "name": "pressure",
+   "type": ["double","null"]
+  },
+  {
+   "name": "humidity",
+   "type": ["double","null"]
+  },
+  {
+   "name": "lux",
+   "type": ["double","null"]
+  },
+  {
+   "name": "proximity",
+   "type": ["int","null"]
+  },
+  {
+   "name": "oxidising",
+   "type": ["double","null"]
+  },
+  {
+   "name": "reducing",
+   "type": ["double","null"]
+  },
+  {
+   "name": "nh3",
+   "type": ["double","null"]
+  },
+    {
+   "name": "gasko",
+   "type": ["string","null"]
+  },
+    {
+   "name": "current",
+   "type": ["int","null"]
+  },
+    {
+   "name": "voltage",
+   "type": ["int","null"]
+  },
+    {
+   "name": "power",
+   "type": ["int","null"]
+  },
+    {
+   "name": "total",
+   "type": ["int","null"]
+  }
+  ,
+  {
+   "name": "fanstatus",
+   "type": ["string","null"]
+  }
+ ]
+}
