@@ -1,0 +1,139 @@
+  {
+ "type": "record",
+ "name": "scada",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "uuid",
+   "type": ["string","null"]
+  },
+  {
+   "name": "systemtime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "temperaturef",
+   "type": ["string","null"]
+  },
+  {
+   "name": "pressure",
+   "type": ["double","null"]
+  },
+  {
+   "name": "humidity",
+   "type": ["double","null"]
+  },
+  {
+   "name": "lux",
+   "type": ["double","null"]
+  },
+  {
+   "name": "proximity",
+   "type": ["int","null"]
+  },
+  {
+   "name": "oxidising",
+   "type": ["double","null"]
+  },
+  {
+   "name": "reducing",
+   "type": ["double","null"]
+  },
+  {
+   "name": "nh3",
+   "type": ["double","null"]
+  },
+  {
+   "name": "gasko",
+   "type": ["string","null"]
+  },
+  {
+   "name": "amplitude100",
+   "type": ["double","null"]
+  },
+  {
+   "name": "amplitude500",
+   "type": ["double","null"]
+  },
+  {
+   "name": "amplitude1000",
+   "type": ["double","null"]
+  },
+  {
+   "name": "lownoise",
+   "type": ["double","null"]
+  },
+  {
+   "name": "midnoise",
+   "type": ["double","null"]
+  },
+  {
+   "name": "highnoise",
+   "type": ["double","null"]
+  },
+  {
+   "name": "amps",
+   "type": ["double","null"]
+  },
+  {
+   "name": "cpu",
+   "type": ["double","null"]
+  },
+  {
+   "name": "memory",
+   "type": ["double","null"]
+  },
+    {
+   "name": "ipaddress",
+   "type": ["string","null"]
+  },  
+  {
+   "name": "host",
+   "type": ["string","null"]
+  },  
+  {
+   "name": "host_name",
+   "type": ["string","null"]
+  },
+  {
+   "name": "macaddress",
+   "type": ["string","null"]
+  },
+  {
+   "name": "endtime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "runtime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "starttime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "cpu_temp",
+   "type": ["string","null"]
+  },
+  {
+   "name": "diskusage",
+   "type": ["string","null"]
+  },
+  {
+   "name": "id",
+   "type": ["string","null"]
+  },
+  {
+   "name": "temperature",
+   "type": ["string","null"]
+  },
+  {
+   "name": "adjtemp",
+   "type": ["string","null"]
+  },
+  {
+   "name": "adjtempf",
+   "type": ["string","null"]
+  }
+ ]
+}
