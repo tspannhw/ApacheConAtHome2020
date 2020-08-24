@@ -1,0 +1,177 @@
+{
+ "type": "record",
+ "name": "energy",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "uuid",
+   "type": ["string","null"]
+  },
+  {
+   "name": "systemtime",
+   "type": ["string","null"]
+  },
+    {
+   "name": "current",
+   "type": ["int","null"]
+  },
+    {
+   "name": "voltage",
+   "type": ["int","null"]
+  },
+    {
+   "name": "power",
+   "type": ["int","null"]
+  },
+    {
+   "name": "total",
+   "type": ["int","null"]
+  },
+  {
+   "name": "fanstatus",
+   "type": ["string","null"]
+  },
+    {
+   "name": "diskusage",
+   "type": ["string","null"]
+  },
+      {
+   "name": "memory",
+   "type": ["int","null"]
+  },
+  {
+   "name": "swver",
+   "type": ["string","null"]
+  },
+  {
+   "name": "hwver",
+   "type": ["string","null"]
+  },
+  {
+   "name": "type",
+   "type": ["string","null"]
+  },
+  {
+   "name": "model",
+   "type": ["string","null"]
+  },
+  {
+   "name": "mac",
+   "type": ["string","null"]
+  },
+  {
+   "name": "deviceId",
+   "type": ["string","null"]
+  },
+  {
+   "name": "hwId",
+   "type": ["string","null"]
+  },
+  {
+   "name": "fwId",
+   "type": ["string","null"]
+  },
+  {
+   "name": "oemId",
+   "type": ["string","null"]
+  },
+  {
+   "name": "alias",
+   "type": ["string","null"]
+  },
+  {
+   "name": "devname",
+   "type": ["string","null"]
+  },
+  {
+   "name": "iconhash",
+   "type": ["string","null"]
+  },
+
+    {
+   "name": "feature",
+   "type": ["string","null"]
+  },
+  {
+   "name": "activemode",
+   "type": ["string","null"]
+  },
+      {
+   "name": "relaystate",
+   "type": ["int","null"]
+  },
+
+  {
+   "name": "updating",
+   "type": ["int","null"]
+  },
+  {
+   "name": "rssi",
+   "type": ["int","null"]
+  },
+  {
+   "name": "ledoff",
+   "type": ["int","null"]
+  },
+  {
+   "name": "latitude",
+   "type": ["int","null"]
+  },
+  {
+   "name": "longitude",
+   "type": ["int","null"]
+  },
+   {
+   "name": "ontime",
+   "type": ["int","null"]
+  },
+    {
+   "name": "day",
+   "type": ["int","null"]
+  },
+    {
+   "name": "index",
+   "type": ["int","null"]
+  }, 
+  {
+   "name": "zonestr",
+   "type": ["string","null"]
+  },
+  {
+   "name": "tzstr",
+   "type": ["string","null"]
+  },
+      {
+   "name": "dstoffset",
+   "type": ["int","null"]
+  },
+  {
+   "name": "host",
+   "type": ["string","null"]
+  },
+  {
+   "name": "currentconsumption",
+   "type": ["int","null"]
+  },
+  {
+   "name": "devicetime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "ledon",
+   "type": ["string","null"]
+  },
+    {
+   "name": "end",
+   "type": ["string","null"]
+  },
+    {
+   "name": "te",
+   "type": ["string","null"]
+  }, 
+      {
+   "name": "cpu",
+   "type": ["int","null"]
+  }
+ ]
+}
