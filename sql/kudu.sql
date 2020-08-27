@@ -128,10 +128,10 @@ STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
  
 CREATE TABLE spl
 (
-  setID STRING,
+  setid STRING,
   version STRING,
   title STRING, 
-  pubDate STRING, 
+  pubdate STRING, 
   link STRING,
   description STRING,
   guid STRING,
