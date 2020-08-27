@@ -131,7 +131,10 @@ CREATE TABLE spl
   setID STRING,
   version STRING,
   title STRING, 
-  pubData STRING,
+  pubDate STRING, 
+  link STRING,
+  description STRING,
+  guid STRING,
 PRIMARY KEY (setID,version) ) 
 PARTITION BY HASH PARTITIONS 4 
 STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
