@@ -130,7 +130,7 @@ CREATE TABLE spl
 (
   setID STRING,
   title STRING,
-PRIMARY KEY (setID, title) ) 
+PRIMARY KEY (setID) ) 
 PARTITION BY HASH PARTITIONS 4 
 STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
 
