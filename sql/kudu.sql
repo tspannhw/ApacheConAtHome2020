@@ -126,6 +126,7 @@ CREATE TABLE global_sensor_events
 PARTITION BY HASH PARTITIONS 4 
 STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
  
+ 
 CREATE TABLE spl
 (
   setid STRING,
@@ -138,4 +139,5 @@ CREATE TABLE spl
 PRIMARY KEY (setID,version) ) 
 PARTITION BY HASH PARTITIONS 4 
 STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
+
 
