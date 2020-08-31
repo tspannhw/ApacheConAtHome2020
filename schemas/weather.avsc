@@ -1,1 +1,159 @@
-{ "type" : "array", "items" : { "type" : "record", "name" : "weather", "fields" : [ { "name" : "credit", "type" : "string", "doc" : "Type inferred from '\"NOAA's National Weather Service\"'" }, { "name" : "credit_URL", "type" : "string", "doc" : "Type inferred from '\"http://weather.gov/\"'" }, { "name" : "image", "type" : { "type" : "record", "name" : "image", "fields" : [ { "name" : "url", "type" : "string", "doc" : "Type inferred from '\"http://weather.gov/images/xml_logo.gif\"'" }, { "name" : "title", "type" : "string", "doc" : "Type inferred from '\"NOAA's National Weather Service\"'" }, { "name" : "link", "type" : "string", "doc" : "Type inferred from '\"http://weather.gov\"'" } ] }, "doc" : "Type inferred from '{\"url\":\"http://weather.gov/images/xml_logo.gif\",\"title\":\"NOAA's National Weather Service\",\"link\":\"http://weather.gov\"}'" }, { "name" : "suggested_pickup", "type" : "string", "doc" : "Type inferred from '\"15 minutes after the hour\"'" }, { "name" : "suggested_pickup_period", "type" : "int", "doc" : "Type inferred from '60'" }, { "name" : "location", "type" : "string", "doc" : "Type inferred from '\"Saguache, Saguache Municipal Airport, CO\"'" }, { "name" : "station_id", "type" : "string", "doc" : "Type inferred from '\"K04V\"'" }, { "name" : "latitude", "type" : "double", "doc" : "Type inferred from '38.09722'" }, { "name" : "longitude", "type" : "double", "doc" : "Type inferred from '-106.16861'" }, { "name" : "observation_time", "type" : "string", "doc" : "Type inferred from '\"Last Updated on Aug 31 2020, 11:55 am MDT\"'" }, { "name" : "observation_time_rfc822", "type" : "string", "doc" : "Type inferred from '\"Mon, 31 Aug 2020 11:55:00 -0600\"'" }, { "name" : "weather", "type" : "string", "doc" : "Type inferred from '\"Mostly Cloudy\"'" }, { "name" : "temperature_string", "type" : "string", "doc" : "Type inferred from '\"63.0 F (17.0 C)\"'" }, { "name" : "temp_f", "type" : "double", "doc" : "Type inferred from '63.0'" }, { "name" : "temp_c", "type" : "double", "doc" : "Type inferred from '17.0'" }, { "name" : "relative_humidity", "type" : "int", "doc" : "Type inferred from '45'" }, { "name" : "wind_string", "type" : "string", "doc" : "Type inferred from '\"Calm\"'" }, { "name" : "wind_dir", "type" : "string", "doc" : "Type inferred from '\"North\"'" }, { "name" : "wind_degrees", "type" : "int", "doc" : "Type inferred from '0'" }, { "name" : "wind_mph", "type" : "double", "doc" : "Type inferred from '0.0'" }, { "name" : "wind_kt", "type" : "int", "doc" : "Type inferred from '0'" }, { "name" : "pressure_in", "type" : "double", "doc" : "Type inferred from '30.17'" }, { "name" : "dewpoint_string", "type" : "string", "doc" : "Type inferred from '\"41.0 F (5.0 C)\"'" }, { "name" : "dewpoint_f", "type" : "double", "doc" : "Type inferred from '41.0'" }, { "name" : "dewpoint_c", "type" : "double", "doc" : "Type inferred from '5.0'" }, { "name" : "visibility_mi", "type" : "double", "doc" : "Type inferred from '10.0'" }, { "name" : "icon_url_base", "type" : "string", "doc" : "Type inferred from '\"http://forecast.weather.gov/images/wtf/small/\"'" }, { "name" : "two_day_history_url", "type" : "string", "doc" : "Type inferred from '\"http://www.weather.gov/data/obhistory/K04V.html\"'" }, { "name" : "icon_url_name", "type" : "string", "doc" : "Type inferred from '\"bkn.png\"'" }, { "name" : "ob_url", "type" : "string", "doc" : "Type inferred from '\"http://www.weather.gov/data/METAR/K04V.1.txt\"'" }, { "name" : "disclaimer_url", "type" : "string", "doc" : "Type inferred from '\"http://weather.gov/disclaimer.html\"'" }, { "name" : "copyright_url", "type" : "string", "doc" : "Type inferred from '\"http://weather.gov/disclaimer.html\"'" }, { "name" : "privacy_policy_url", "type" : "string", "doc" : "Type inferred from '\"http://weather.gov/notice.html\"'" } ] } }
+{
+ "type": "array",
+ "items": {
+  "type": "record",
+  "name": "weather",
+  "fields": [
+   {
+    "name": "credit",
+    "type": ["null","string"]
+   },
+   {
+    "name": "credit_URL",
+    "type": ["null","string"]
+   },
+   {
+    "name": "image",
+    "type": {
+     "type": "record",
+     "name": "image",
+     "fields": [
+      {
+       "name": "url",
+    "type": ["null","string"]
+      },
+      {
+       "name": "title",
+    "type": ["null","string"]
+      },
+      {
+       "name": "link",
+    "type": ["null","string"]
+      }
+     ]
+    },
+    "doc": "Type inferred from '{\"url\":\"http://weather.gov/images/xml_logo.gif\",\"title\":\"NOAA's National Weather Service\",\"link\":\"http://weather.gov\"}'"
+   },
+   {
+    "name": "suggested_pickup",
+    "type": ["null","string"]
+   },
+   {
+    "name": "suggested_pickup_period",
+    "type": "int"
+   },
+   {
+    "name": "location",
+    "type": ["null","string"]
+   },
+   {
+    "name": "station_id",
+    "type": ["null","string"]
+   },
+   {
+    "name": "latitude",
+    "type": "double"
+   },
+   {
+    "name": "longitude",
+    "type": "double"
+   },
+   {
+    "name": "observation_time",
+    "type": ["null","string"]
+   },
+   {
+    "name": "observation_time_rfc822",
+    "type": ["null","string"]
+   },
+   {
+    "name": "weather",
+    "type": ["null","string"]
+   },
+   {
+    "name": "temperature_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "temp_f",
+    "type": "double"
+   },
+   {
+    "name": "temp_c",
+    "type": "double"
+   },
+   {
+    "name": "relative_humidity",
+    "type": "int"
+   },
+   {
+    "name": "wind_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "wind_dir",
+    "type": ["null","string"]
+   },
+   {
+    "name": "wind_degrees",
+    "type": "int"
+   },
+   {
+    "name": "wind_mph",
+    "type": "double"
+   },
+   {
+    "name": "wind_kt",
+    "type": "int"
+   },
+   {
+    "name": "pressure_in",
+    "type": "double"
+   },
+   {
+    "name": "dewpoint_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "dewpoint_f",
+    "type": "double"
+   },
+   {
+    "name": "dewpoint_c",
+    "type": "double"
+   },
+   {
+    "name": "visibility_mi",
+    "type": "double"
+   },
+   {
+    "name": "icon_url_base",
+    "type": ["null","string"]
+   },
+   {
+    "name": "two_day_history_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "icon_url_name",
+    "type": ["null","string"]
+   },
+   {
+    "name": "ob_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "disclaimer_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "copyright_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "privacy_policy_url",
+    "type": ["null","string"]
+   }
+  ]
+ }
+}
