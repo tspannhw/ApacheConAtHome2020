@@ -1,0 +1,445 @@
+<html>
+<head>
+<title>Find Help Near You</title>
+<body>
+<script>
+// Usage
+window.onload = function() {
+      
+navigator.getBattery().then(function(battery) {
+  // console.log(battery.level);
+  battery.addEventListener('levelchange', function() {
+    // console.log(this.level);
+  });
+});
+
+navigator.connection.addEventListener('change', logNetworkInfo);
+};
+
+////////////// print these
+  var city =  "";
+  var region =  "";
+  var postal =  "";
+  var lat2 =  "";
+  var long2 =  "";
+  var timezone =  "";
+  var asn =  "";
+  var latitude = "";
+  var longitude = "";
+  var ips = "";
+  var ip2 = "";
+  var batteryInfo = "";
+  var screenInfo = screen.width +","+ screen.height + "," +
+                   screen.availWidth +","+ screen.availHeight + "," +
+                     screen.colorDepth + "," + screen.pixelDepth;
+  var pluginsInfo = "";
+  var coresInfo = "";
+  var netInfo = "";
+  var downInfo = "";
+  var rttInfo = "";
+  var downMaxInfo = "";
+  var effectiveInfo = "";
+  var saveDataInfo = "";
+</script>
+
+<p>
+<br>
+<strong>Order Items With NiFi</p></strong>
+<br>
+<p><button onclick="geoFindMe()">Determine my location</button></p>
+
+<form action="/upload" method="post" enctype="multipart/form-data" id="form-id">
+
+    <!-- The file to upload -->
+    <p><input id="file-id" type="file" name="our-file" />
+
+    <input type="hidden" name="pluginsInfo" id="pluginsInfo" value="NA"/>
+    <input type="hidden" name="netInfo" id="netInfo" value="NA"/>
+    <input type="hidden" name="saveDataInfo" id="saveDataInfo" value="NA"/>
+    <input type="hidden" name="downInfo" id="downInfo" value="NA"/>
+    <input type="hidden" name="rttInfo" id="rttInfo" value="NA"/>
+    <input type="hidden" name="downMaxInfo" id="downMaxInfo" value="NA"/>
+    <input type="hidden" name="effectiveInfo" id="effectiveInfo" value="NA"/>
+    <input type="hidden" name="screen" id="screenInfo" value="NA"/>
+    <input type="hidden" name="cores" id="coresInfo" value="NA"/>
+    <input type="hidden" name="battery" id="batteryInfo" value="NA"/>
+    <input type="hidden" name="ip" id="ip2" value="NA"/>
+    <input type="hidden" name="lng" id="lng" value="NA"/>
+    <input type="hidden" name="lat" id="lat" value="NA"/>
+
+    <!--
+      Also by default, we disable the upload button.
+      If Ajax uploads are supported we'll enable it.
+      input  type="button" onclick="" value="Upload" id="upload-button-id" 
+    -->
+  
+      <!-- field1 -->
+    <p><label>Product: </label><input name="product" type="text" id="product-id" size="100" value="Orange Juice"/>
+    </p>
+
+    <!-- field 2 -->
+    <p><label>Comment: </label><textarea rows="5" cols="80" name="other-field" type="text" id="other-field-id" width="300">Tim Test</textarea>
+    </p>
+
+      <!-- field 3 -->
+    <p><label>Product Size: </label><input name="productsize" type="text" id="product-size-id" size="25" value="1L"/>
+    </p>
+
+
+      <!-- field 4 -->
+    <p><label>Price: </label><input name="price" type="text" id="price-id" size="25" value="1.99"/>
+    </p>
+
+
+      <!-- field 5 -->
+    <p><label>UPC: </label><input name="upc" type="text" id="upc-id" size="25" value="TIM123456789012345"/>
+    </p>
+
+
+      <!-- field 6 -->
+    <p><label>Product Description: </label><input name="itemdescription" type="text" id="itemdescription-id" size="125" value="Candy"/>
+    </p>
+
+          <!-- field 7 -->
+    <p><label>Store: </label><input name="store" type="text" id="store-id" size="125" value="TIMART"/>
+    </p>
+
+              <!-- field 8 -->
+    <p><label>Brand Name: </label><input name="brandname" type="text" id="brandname-id" size="125" value="TIMCO"/>
+    </p>
+
+              <!-- field 9 -->
+    <p><label>MSRP: </label><input name="msrp" type="text" id="msrp-id" size="125" value="1.99"/>
+    </p>
+
+
+    <!-- And finally a submit button -->
+    <p><input type="submit" value="Send Order" /></p>
+
+</form>
+<div id="out"></div>
+
+<div id="demo"></div>
+
+<div id="results"> </div>
+
+<pre id="log"></pre>
+ 
+<iframe id="iframe" sandbox="allow-same-origin" style="display: none"></iframe>
+<script>
+
+function logNetworkInfo() {
+  // Network type that browser uses
+  netInfo = navigator.connection.type;
+
+  document.getElementById('netInfo').value = netInfo;
+
+  // Effective bandwidth estimate
+  downInfo = navigator.connection.downlink + ' Mb/s';
+
+  document.getElementById('downInfo').value = downInfo;
+
+  // Effective round-trip time estimate
+  rttInfo = navigator.connection.rtt + ' ms';
+
+  document.getElementById('rttInfo').value = rttInfo;
+
+  // Upper bound on the downlink speed of the first network hop
+  downMaxInfo = navigator.connection.downlinkMax + ' Mb/s';
+
+  document.getElementById('downMaxInfo').value = downMaxInfo;
+
+  // Effective connection type determined using a combination of recently
+  // observed rtt and downlink values: ' +
+  effectiveInfo =  navigator.connection.effectiveType;
+  
+  document.getElementById('effectiveInfo').value = effectiveInfo;
+
+  // True if the user has requested a reduced data usage mode from the user
+  // agent.
+  saveDataInfo = navigator.connection.saveData;
+
+  document.getElementById('saveDataInfo').value = saveDataInfo;
+}
+
+logNetworkInfo();
+  
+////// Set Plugins
+ for (var i = 0; i < 12; i++) {
+ 		if ( typeof window.navigator.plugins[i] !== 'undefined' ) { 
+        	pluginsInfo += window.navigator.plugins[i].name + ', ';                 
+        }
+ }
+
+ document.getElementById('pluginsInfo').value = pluginsInfo;
+ 
+////// Set Cores
+if ( window.navigator.hardwareConcurrency > 0  ) {
+    coresInfo = window.navigator.hardwareConcurrency + " cores";
+    document.getElementById('coresInfo').value = coresInfo;
+}
+
+/// send the information to the server
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = '';
+    }
+  };
+  document.getElementById('screenInfo').value = screenInfo;
+  // /send - usually only can get screen size
+  /*
+  xhttp.open("POST", "/send", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.responseType = 'json';
+  xhttp.send('{"plugins":"' + pluginsInfo +
+               '", "screen":"' + screenInfo + 
+               '", "cores":"' + coresInfo + 
+               '", "battery":"' + batteryInfo + 
+               '", "netInfo":"' + netInfo +
+               '", "downInfo":"' + downInfo +
+               '", "rttInfo":"' + rttInfo +
+               '", "downMaxInfo":"' + downMaxInfo +
+               '", "effectiveInfo":"' + effectiveInfo +
+               '", "saveDataInfo":"' + saveDataInfo +
+               '", "ip":"' + ip2 + 
+               '", "lat":"' + latitude + 
+               '", "lng":"' + longitude + '"}')
+  */
+
+var htmlString = "";
+
+xhttp.onload = function() {
+  //var responseObj = xhttp.response;
+  var output = document.getElementById("results");
+
+  if (this.status == 200) {
+    // Loop through each post
+    this.response.forEach(function (post) {
+        htmlString = htmlString + "<b>" + post.name + "</b> is a " + post.type + " that is " + post.distance_km + " away.<br>";
+    });
+
+    output.innerHTML = "<p>" + htmlString + "</p>";
+  }
+};
+
+}
+
+////////////
+function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+
+  function success(position) {
+     latitude  = position.coords.latitude;
+     longitude = position.coords.longitude;
+     document.getElementById('lat').value = latitude;
+     document.getElementById('lng').value = longitude;
+
+    output.innerHTML = '<p>Latitude is ' + latitude + ' <br>Longitude is ' + longitude + '</p>';
+  }
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location.   Please enter your lat/long or street address and city";
+  }
+
+  output.innerHTML = "<p>Locating...</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+
+  loadDoc();
+}
+
+//get the IP addresses associated with an account
+function getIPs(callback)
+{
+    var ip_dups = {};
+
+    //compatibility for firefox and chrome
+    var RTCPeerConnection = window.RTCPeerConnection
+        || window.mozRTCPeerConnection
+        || window.webkitRTCPeerConnection;
+    var useWebKit = !!window.webkitRTCPeerConnection;
+
+    //bypass naive webrtc blocking using an iframe
+    if(!RTCPeerConnection){
+        var win = iframe.contentWindow;
+        RTCPeerConnection = win.RTCPeerConnection
+            || win.mozRTCPeerConnection
+            || win.webkitRTCPeerConnection;
+        useWebKit = !!win.webkitRTCPeerConnection;
+    }
+
+    //minimal requirements for data connection
+    var mediaConstraints = {
+        optional: [{RtpDataChannels: true}]
+    };
+
+    var servers = {iceServers: [{urls: "stun:stun.services.mozilla.com"}]};
+
+    //construct a new RTCPeerConnection
+    var pc = new RTCPeerConnection(servers, mediaConstraints);
+
+    function handleCandidate(candidate){
+        //match just the IP address
+        var ip_regex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/
+        var ip_addr = ip_regex.exec(candidate)[1];
+
+		ip2 = ip_addr;
+		
+        //remove duplicates
+        if(ip_dups[ip_addr] === undefined)
+            callback(ip_addr);
+
+        ip_dups[ip_addr] = true;
+    }
+
+    //listen for candidate events
+    pc.onicecandidate = function(ice){
+
+        //skip non-candidate events
+        if(ice.candidate)
+            handleCandidate(ice.candidate.candidate);
+    };
+
+    //create a bogus data channel
+    pc.createDataChannel("");
+
+    //create an offer sdp
+    pc.createOffer(function(result){
+
+        //trigger the stun server request
+        pc.setLocalDescription(result, function(){}, function(){});
+
+    }, function(){});
+
+    //wait for a while to let everything done
+    setTimeout(function() {
+        //read candidate info from local description
+        if ( pc && pc.localDescription && pc.localDescription.sdp ) { 
+           var lines = pc.localDescription.sdp.split('\n');
+
+        	lines.forEach(function(line) {
+            	if(line.indexOf('a=candidate:') === 0) 
+                	handleCandidate(line);
+            });
+        }
+    }, 1000);
+}
+
+window.addEventListener("load", function (ev) {
+    "use strict";
+    var log = document.getElementById("log");
+    // https://dvcs.w3.org/hg/dap/raw-file/tip/sensor-api/Overview.html
+    window.addEventListener("devicetemperature", function (ev) {
+        log.textContent += "devicetemperature " + ev.value + "\n";
+    }, false);
+    window.addEventListener("devicepressure", function (ev) {
+        log.textContent += "devicepressure " + ev.value + "\n";
+    }, false);
+    window.addEventListener("devicelight", function (ev) {
+        log.textContent += "devicelight " + ev.value + "\n";
+        // toy tric
+        log.style.color = "rgb(" + (255 - 2*ev.value) + ",0,0)";
+        log.style.backgroundColor = "rgb(0,0," + (2*ev.value) + ")";
+    }, false);
+    window.addEventListener("deviceproximity", function (ev) {
+        log.textContent += "deviceproximity " + ev.value + "\n";
+        // toy tric
+        if (ev.value < 3) navigator.vibrate([300, 100, 100]);
+    }, false);
+    window.addEventListener("devicenoise", function (ev) {
+        log.textContent += "devicenoise " + ev.value + "\n";
+    }, false);
+    window.addEventListener("devicehumidity", function (ev) {
+        log.textContent += "devicehumidity " + ev.value + "\n";
+    }, false);
+
+    //https://wiki.mozilla.org/Magnetic_Field_Events
+    window.addEventListener("devicemagneticfield", function (ev) {
+        log.textContent += "devicemagneticfield " + [ev.x, ev.y, ev.x]+ "\n";
+    }, false);
+
+    // https://dvcs.w3.org/hg/dap/raw-file/default/pressure/Overview.html
+    window.addEventListener("atmpressure", function (ev) {
+        log.textContent += "atmpressure " + ev.value + "\n";
+    }, false);
+    
+    // https://dvcs.w3.org/hg/dap/raw-file/tip/humidity/Overview.html
+    window.addEventListener("humidity", function (ev) {
+        log.textContent += "humidity " + ev.value + "\n";
+    }, false);
+    
+    // https://dvcs.w3.org/hg/dap/raw-file/tip/temperature/Overview.html
+    window.addEventListener("temperature", function (ev) {
+        log.textContent += "temperature " + [ev.f, ev.c, ev.k, ev.value] + "\n";
+    }, false);
+    
+    // https://dvcs.w3.org/hg/dap/raw-file/tip/battery/Overview.html
+    try {
+        if (typeof navigator.getBattery === "function") {
+            navigator.getBattery().then(function (battery) {
+                log.textContent += "battery.level " + battery.level + "\n";
+                log.textContent += "battery.charging " + battery.charging + "\n";
+                
+                batteryInfo = "battery.level=" + battery.level + "," + 
+                               "battery.charging=" + battery.charging;
+                
+                log.textContent += "battery.chargeTime " + battery.chargeTime + "\n";
+                log.textContent += "battery.dischargeTime " + battery.dischargeTime + "\n";
+                battery.addEventListener("levelcharge", function (ev) {
+                    log.textContent += "change battery.level " + battery.level + "\n";
+                    batteryInfo = "battery.level=" + battery.level + "," + 
+                               "battery.charging=" + battery.charging;
+                }, false);
+            }).catch(function (err) {
+                log.textContent += err.toString() + "\n";
+            });
+        } else {
+            log.textContent += "";
+        }
+    } catch (ex) {
+        log.textContent += ex.toString() + "\n";
+    } 
+}, false);
+
+getIPs(function(ip){ips = ip;});
+geoFindMe();
+
+var form = document.getElementById('form-id');
+
+form.onsubmit = function() {
+    //loadDoc();
+
+    // FormData receives the whole form
+    var formData = new FormData(form);
+    // We send the data where the form wanted
+    var action = form.getAttribute('action');
+
+    // Code common to both variants
+    sendXHRequest(formData, action);
+    // Avoid normal form submission
+    return false;
+  }
+
+  function sendXHRequest(formData, uri) {
+        // Get an XMLHttpRequest instance
+        var xhr = new XMLHttpRequest();
+        // Set up events
+        xhr.upload.addEventListener('loadstart', onloadstartHandler, false);
+        xhr.upload.addEventListener('progress', onprogressHandler, false);
+        xhr.upload.addEventListener('load', onloadHandler, false);
+        xhr.addEventListener('readystatechange', onreadystatechangeHandler, false);
+        // Set up request
+        xhr.open('POST', uri, true);
+        // Fire!
+        xhr.send(formData);
+}
+</script>
+</body>
+</html>
