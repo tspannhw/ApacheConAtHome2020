@@ -1,0 +1,55 @@
+     {
+ "type": "record",
+ "name": "provenance",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "eventId",
+   "type": ["int","null"]
+  },
+  {
+   "name": "timestampMillis",
+   "type": ["int","null"]
+  },
+    {
+   "name": "eventType",
+   "type": ["string","null"]
+  },
+    {
+   "name": "durationMillis",
+   "type": ["int","null"]
+  },
+    {
+   "name": "lineageStart",
+   "type": ["int","null"]
+  },
+    {
+   "name": "entitySize",
+   "type": ["int","null"]
+  },
+  {
+   "name": "details",
+   "type": ["string","null"]
+  },
+    {
+   "name": "entityId",
+   "type": ["string","null"]
+  },
+  {
+   "name": "entityType",
+   "type": ["string","null"]
+  },
+  {
+   "name": "componentName",
+   "type": ["string","null"]
+  },
+  {
+   "name": "componentType",
+   "type": ["string","null"]
+  },
+  {
+   "name": "contentPath",
+   "type": ["string","null"]
+  }
+ ]
+}
