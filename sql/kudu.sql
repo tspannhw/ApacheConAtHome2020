@@ -15,6 +15,24 @@ PRIMARY KEY (upc, originstore, updatedate) )
 PARTITION BY HASH PARTITIONS 4 
 STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
 
+CREATE TABLE provenance
+(
+  eventId INT,
+  timestampMillis INT,
+  eventType STRING,
+  durationMillis INT,
+  lineageStart INT,
+  details STRING,
+  entityId STRING,
+  entityType STRING,
+  entitySize INT,
+  componentName STRING,
+   componentType STRING,
+     contentPath STRING, 
+  PRIMARY KEY (eventId,timestampMillis ) ) 
+PARTITION BY HASH PARTITIONS 4
+STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
+	
 CREATE TABLE weatherkudu
 (`location` STRING,`observation_time` STRING, `credit` STRING, `credit_url` STRING, `image` STRING, `suggested_pickup` STRING, `suggested_pickup_period` BIGINT,
 `station_id` STRING, `latitude` DOUBLE, `longitude` DOUBLE,  `observation_time_rfc822` STRING, `weather` STRING, `temperature_string` STRING,
