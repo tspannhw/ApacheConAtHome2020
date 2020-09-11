@@ -26,8 +26,6 @@ CREATE TABLE hv_stocks
   `high` STRING,
   `volume` STRING,
   `low` STRING,
-   creator STRING DEFAULT CURRENT_USER(),    
-   createDate DATE DEFAULT CURRENT_DATE(),
    PRIMARY KEY (UUID) DISABLE NOVALIDATE)
  STORED AS ORC TBLPROPERTIES ('transactional'='true');
   
