@@ -68,6 +68,7 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/stocks
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/stocks
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /warehouse/tablespace/managed/hive
 
 cd /opt/demo/ApacheConAtHome2020
 
