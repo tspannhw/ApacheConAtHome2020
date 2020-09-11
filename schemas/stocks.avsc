@@ -1,0 +1,9 @@
+{ "type" : "record", "name" : "stocks", 
+"fields" : [ 
+{ "name" : "symbol", "type" : ["null", "string"]}, 
+{ "name" : "companyName", "type" : ["null", "string"]}, 
+{ "name" : "open", "type" : ["null", "string"]}, 
+{ "name" : "close", "type" : ["null", "string"]}, 
+{ "name" : "high", "type" : ["null", "string"]}, 
+{ "name" : "low", "type" : ["null", "string"]}
+] }
