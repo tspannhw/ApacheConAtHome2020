@@ -14,6 +14,8 @@ CREATE TABLE provenancehive
   componentName STRING,
    componentType STRING
    );
+
+
 CREATE TABLE hv_stocks
 (
   uuid STRING NOT NULL,
@@ -26,6 +28,7 @@ CREATE TABLE hv_stocks
   `low` STRING,
    creator STRING DEFAULT CURRENT_USER(),    
    createDate DATE DEFAULT CURRENT_DATE(),
-   PRIMARY KEY (UUID) DISABLE NOVALIDATE);
-  );
+   PRIMARY KEY (UUID) DISABLE NOVALIDATE)
+ STORED AS ORC TBLPROPERTIES ('transactional'='true');
+  
   
