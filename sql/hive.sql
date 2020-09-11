@@ -13,4 +13,17 @@ CREATE TABLE provenancehive
   entitySize INT,
   componentName STRING,
    componentType STRING
-   )
+   );
+   
+   
+CREATE TABLE hv_stocks
+(
+  uuid STRING,
+  `datetime` STRING,
+  `symbol` STRING, 
+  `open` STRING, 
+  `close` STRING,
+  `high` STRING,
+  `volume` STRING,
+  `low` STRING
+  );
