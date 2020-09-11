@@ -14,16 +14,18 @@ CREATE TABLE provenancehive
   componentName STRING,
    componentType STRING
    );
-   
-   
 CREATE TABLE hv_stocks
 (
-  uuid STRING,
+  uuid STRING NOT NULL,
   `datetime` STRING,
   `symbol` STRING, 
   `open` STRING, 
   `close` STRING,
   `high` STRING,
   `volume` STRING,
-  `low` STRING
+  `low` STRING,
+   creator STRING DEFAULT CURRENT_USER(),    
+   createDate DATE DEFAULT CURRENT_DATE(),
+   PRIMARY KEY (UUID) DISABLE NOVALIDATE);
   );
+  
