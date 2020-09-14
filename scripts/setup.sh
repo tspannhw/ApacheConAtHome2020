@@ -116,20 +116,27 @@ echo ""
 # https://registry-project.readthedocs.io/en/latest/schema-registry.html#api-examples
 # http://edge2ai-1.dim.local:7788/swagger
 
-# upload schema name
-curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"itemprice\", \"description\": \"itemprice\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
+for f in /opt/demo/ApacheConAtHome2020/schemas/*.avsc
+do 
 
-curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"krogerprices\", \"description\": \"itemprice\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
-
+echo "Uploading Schema File $f"
+schemaname="`echo $f | awk -F'[/_.]' '{print $(NF-1)}'`"
+echo "Schema [$schemaname]"
 echo ""
+
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"$schemaname\", \"description\": \"schemaname\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
+
 echo ""
 
 # Upload body
-# /itemprice/ - schema name
-curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/itemprice/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/ApacheConAtHome2020/schemas/itemprice.avsc;type=application/json" -F "description=itemprice"
 
-# krogerprices.avsc
-curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/krogerprices/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/ApacheConAtHome2020/schemas/krogerprices.avsc;type=application/json" -F "description=itemprice"
+curl -X POST "http://edge2ai-1.dim.local:7788/api/v1/schemaregistry/schemas/$schemaname/versions/upload?branch=MASTER&disableCanonicalCheck=false" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@/opt/demo/ApacheConAtHome2020/schemas/$schemaname.avsc;type=application/json" -F "description=schemaname"
+
+echo "Added."
+echo ""
+
+done
+
 
 echo ""
 echo ""
