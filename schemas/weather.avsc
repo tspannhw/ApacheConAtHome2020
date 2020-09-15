@@ -50,11 +50,11 @@
    },
    {
     "name": "latitude",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "longitude",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "observation_time",
@@ -74,15 +74,15 @@
    },
    {
     "name": "temp_f",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "temp_c",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "relative_humidity",
-    "type": "int"
+    "type": ["int"]
    },
    {
     "name": "wind_string",
@@ -94,19 +94,19 @@
    },
    {
     "name": "wind_degrees",
-    "type": "int"
+    "type": ["int"]
    },
    {
     "name": "wind_mph",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "wind_kt",
-    "type": "int"
+    "type": ["int"]
    },
    {
     "name": "pressure_in",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "dewpoint_string",
@@ -114,15 +114,15 @@
    },
    {
     "name": "dewpoint_f",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "dewpoint_c",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "visibility_mi",
-    "type": "double"
+    "type": ["double"]
    },
    {
     "name": "icon_url_base",
