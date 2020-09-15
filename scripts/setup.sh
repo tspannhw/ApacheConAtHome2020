@@ -226,13 +226,19 @@ echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔�
 echo ""
 echo ""
 
-/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic global_sensor_events
+for f in /opt/demo/ApacheConAtHome2020/schemas/*.avsc
+do 
 
-/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic energy
+schemaname="`echo $f | awk -F'[/_.]' '{print $(NF-1)}'`"
+echo "Creating Kafka Topic [$schemaname]"
+echo ""
 
-/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic scada
+/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic $schemaname
+#/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic energy
+#/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic scada
+#/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic itemprice
 
-/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic itemprice
+done
 
 # Kafka Connect
 # https://docs.cloudera.com/runtime/7.2.0/smm-rest-api-reference/index.html#/Kafka_Connect_operations
@@ -268,7 +274,16 @@ echo ""
 # load that file TODO
 # itemprice is connector name
 
-curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/itemprice" -H "accept: application/json" -H "Content-Type: application/json" -d @/opt/demo/ApacheConAtHome2020/kafkaconnect/itemprice.json
+for f in /opt/demo/ApacheConAtHome2020/kafkaconnect/*.json
+do 
+
+schemaname="`echo $f | awk -F'[/_.]' '{print $(NF-1)}'`"
+echo "Creating Kafka Connectors for each [$schemaname]"
+echo ""
+
+curl -X PUT "http://edge2ai-1.dim.local:8585/api/v1/admin/kafka-connect/connectors/$schemaname" -H "accept: application/json" -H "Content-Type: application/json" -d @/opt/demo/ApacheConAtHome2020/kafkaconnect/$schemaname.json
+
+done
 
 echo ""
 echo ""
