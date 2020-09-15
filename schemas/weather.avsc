@@ -1,6 +1,4 @@
 {
- "type": "array",
- "items": {
   "type": "record",
   "name": "weather",
   "fields": [
@@ -153,7 +151,5 @@
    {
     "name": "privacy_policy_url",
     "type": ["null","string"]
-   }
-  ]
- }
+   }]
 }
