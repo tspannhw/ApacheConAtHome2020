@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 5","description":"alert 5","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287511393,"policy":"ALERT IF ( ANY CONSUMER MILLISECONDS_LAPSED_SINCE_CONSUMER_WAS_ACTIVE >= 60000 )"}
