@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 9","description":"alert 9","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287659267,"policy":"ALERT IF ( LATENCY (topic=\".*\", consumer=\".*\") END_TO_END_LATENCY >= 120 )"}
