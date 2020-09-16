@@ -1,0 +1,1 @@
+{"id":null,"name":"alert kafka connect itemprice","description":"alert kafka connect itemprice","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287878310,"policy":"ALERT IF ( CONSUMER (name=\"connect-itemprice\") IS_CONSUMER_ACTIVE != true )"}
