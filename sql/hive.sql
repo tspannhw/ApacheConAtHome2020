@@ -11,7 +11,7 @@ CREATE TABLE provenancehive
   entitySize INT,
   componentName STRING,
    componentType STRING
-);
+)  TBLPROPERTIES ('transactional_properties'='insert_only');
 
 CREATE TABLE hv_stocks
 (
@@ -24,4 +24,4 @@ CREATE TABLE hv_stocks
   `volume` STRING,
   `low` STRING,
    PRIMARY KEY (UUID) DISABLE NOVALIDATE)
- );
+ ) TBLPROPERTIES ('transactional_properties'='insert_only');
