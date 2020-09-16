@@ -33,7 +33,7 @@ http://edge2ai-1.dim.local:9991/api/v1/admin/alertPolicy
 
 {"id":null,"name":"alert 7","description":"alert 7","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287569319,"policy":"ALERT IF ( ANY TOPIC OUT_OF_SYNC_REPLICA_COUNT >= 1 )"}
 
-"id":null,"name":"alert 8","description":"alert 8","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287627413,"policy":"ALERT IF ( ANY TOPIC BYTES_IN_PER_SEC <= 120 )"}
+{"id":null,"name":"alert 8","description":"alert 8","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287627413,"policy":"ALERT IF ( ANY TOPIC BYTES_IN_PER_SEC <= 120 )"}
 
 {"id":null,"name":"alert 9","description":"alert 9","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287659267,"policy":"ALERT IF ( LATENCY (topic=\".*\", consumer=\".*\") END_TO_END_LATENCY >= 120 )"}
 
