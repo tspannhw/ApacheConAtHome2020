@@ -345,6 +345,9 @@ flink-yarn-session -tm 2048 -s 2 -d
 
 # flink-sql-client embedded -e /opt/demo/ApacheConAtHome2020/conf/sql-env.yaml
 
+# Final HDFS Check (demo only, use Apache Ranger in SDX for real workloads).
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
+
 echo ""
 echo ""
 echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
