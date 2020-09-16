@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 3","description":"alert 3","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287415498,"policy":"ALERT IF ( ANY CONSUMER IS_CONSUMER_ACTIVE = false )"}
