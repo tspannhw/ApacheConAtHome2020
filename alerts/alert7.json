@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 7","description":"alert 7","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287569319,"policy":"ALERT IF ( ANY TOPIC OUT_OF_SYNC_REPLICA_COUNT >= 1 )"}
