@@ -1,0 +1,1 @@
+{"id":null,"name":"alert kafka connect producer-logs","description":"alert kafka connect producer-logs","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287929540,"policy":"ALERT IF ( PRODUCER (name=\"connector-producer-logs-0\") IS_PRODUCER_ACTIVE != true )"}
