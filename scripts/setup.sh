@@ -69,6 +69,12 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/itemprice
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/stocks
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/stocks
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /warehouse/tablespace/managed/hive
+HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /iextradingnews
+HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /iextradingquote
+HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /iextradingchart
+HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /stocks
+HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /cyber
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
 
 cd /opt/demo/ApacheConAtHome2020
 
