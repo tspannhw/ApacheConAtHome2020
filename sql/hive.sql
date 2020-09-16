@@ -1,5 +1,3 @@
-
-
 CREATE TABLE provenancehive
 (
   eventId INT,
@@ -13,8 +11,7 @@ CREATE TABLE provenancehive
   entitySize INT,
   componentName STRING,
    componentType STRING
-   );
-
+);
 
 CREATE TABLE hv_stocks
 (
@@ -27,6 +24,4 @@ CREATE TABLE hv_stocks
   `volume` STRING,
   `low` STRING,
    PRIMARY KEY (UUID) DISABLE NOVALIDATE)
- STORED AS ORC TBLPROPERTIES ('transactional'='true');
-  
-  
+ );
