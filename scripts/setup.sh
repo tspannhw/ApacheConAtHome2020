@@ -100,6 +100,18 @@ echo ""
 
 impala-shell -i edge2ai-1.dim.local -d default -f  /opt/demo/ApacheConAtHome2020/sql/kudu.sql 
 
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo " Building Apache Hive ORC Tx Tables"
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo ""
+
+# Build Hive Tables
+beeline -u jdbc:hive2://edge2ai-1.dim.local:10000/default -f /opt/demo/ApacheConAtHome2020/sql/hive.sql
+
 # Postgresql Tables
 # Phoenix Tables
 # Druid Tables
