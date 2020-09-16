@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 11","description":"alert 11","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287749642,"policy":"ALERT IF ( ANY PRODUCER IS_PRODUCER_ACTIVE != true )"}
