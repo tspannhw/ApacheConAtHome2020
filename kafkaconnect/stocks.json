@@ -6,7 +6,7 @@
  "topics": "stocks",
  "value.converter.schema.registry.url": "http://edge2ai-1.dim.local:7788/api/v1",
  "value.converter.passthrough.enabled": "true",
- "hdfs.output": "/tmp/stocks/",
+ "hdfs.output": "/tmp/stocksavro/",
  "output.avro.passthrough.enabled": "true",
  "hadoop.conf.path": "file:///etc/hadoop/conf",
  "name": "stocks",
