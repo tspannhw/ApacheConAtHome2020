@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 12","description":"alert 12","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287792099,"policy":"ALERT IF ( CLUSTER_REPLICATION (cluster=\".*\") REPLICATION_STATUS != ACTIVE )"}
