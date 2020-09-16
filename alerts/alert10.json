@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 10","description":"alert 10","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287706360,"policy":"ALERT IF ( ANY PRODUCER MILLISECONDS_LAPSED_SINCE_PRODUCER_WAS_ACTIVE >= 600000 )"}
