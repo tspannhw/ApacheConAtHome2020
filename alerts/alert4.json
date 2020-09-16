@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 4","description":"alert 4","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287448792,"policy":"ALERT IF ( ANY CONSUMER CONSUMER_GROUP_LAG >= 120 )"}
