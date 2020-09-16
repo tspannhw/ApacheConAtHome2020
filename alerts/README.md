@@ -21,6 +21,9 @@ http://edge2ai-1.dim.local:9991/api/v1/admin/alertPolicy
 
 {"id":null,"name":"alert 1","description":"alert 1","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287180171,"policy":"ALERT IF ( CLUSTER ONLINE_BROKER_COUNT <= 0 )"}
 
+{"id":null,"name":"alert 2","description":"alert 2","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287336868,"policy":"ALERT IF ( BROKER (name=\"1546333332\") IS_BROKER_DOWN = true )"}
+
+
 
 # GET the list of alert policies created
 http://edge2ai-1.dim.local:9991/api/v1/admin/alertPolicy
