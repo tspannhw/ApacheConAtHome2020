@@ -266,9 +266,6 @@ echo "Creating Kafka Topic [$schemaname]"
 echo ""
 
 /opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic $schemaname
-#/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic energy
-#/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic scada
-#/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic itemprice
 
 done
 
@@ -328,6 +325,44 @@ echo ""
 
 # Check KC Metrics
 curl -X GET "http://ec2-54-167-28-79.compute-1.amazonaws.com:8585/api/v1/admin/metrics/connect/workers" -H "accept: application/json"
+
+# Build Alerts
+# edge2ai-1.dim.local
+
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo "Build Alerts"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo ""
+
+curl -X GET "http://edge2ai-1.dim.local:9991/api/v1/admin/alert/notifications?limit=11&startOffset=-1"
+
+# POST to build A Notifier
+
+curl -X POST "http://edge2ai-1.dim.local:9991/api/v1/admin/notifiers" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"type\": \"avro\", \"schemaGroup\": \"Kafka\", \"name\": \"$schemaname\", \"description\": \"schemaname\", \"compatibility\": \"BOTH\", \"validationLevel\": \"LATEST\"}"
+
+{"id":null,"name":"http","description":"http","notifierProviderId":"http",
+"rateLimiterConfig":{"count":1,"duration":"MINUTE"},
+"config":{"URL":"http://edge2ai-1.dim.local:9999/alerts","ConnectionTimeoutInMilliSecs":30000,"ReadTimeoutInMilliSecs":30000}}
+
+echo ""
+
+# GET to list that notifier
+curl -X GET "http://edge2ai-1.dim.local:9991/api/v1/admin/notifiers"
+
+echo ""
+
+# POST to Add a new alert Policy
+for f in /opt/demo/ApacheConAtHome2020/alerts/*.json
+do 
+  curl -X POST "http://edge2ai-1.dim.local:8585/api/v1/admin/kalertPolicy" -H "accept: application/json" -H "Content-Type: application/json" -d @$f
+  echo ""
+done
+
+# GET the list of alert policies created
+curl -X GET "http://edge2ai-1.dim.local:9991/api/v1/admin/alertPolicy"
 
 echo ""
 echo ""
