@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 2","description":"alert 2","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287336868,"policy":"ALERT IF ( BROKER (name=\"1546333332\") IS_BROKER_DOWN = true )"}
