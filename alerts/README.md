@@ -33,6 +33,22 @@ http://edge2ai-1.dim.local:9991/api/v1/admin/alertPolicy
 
 {"id":null,"name":"alert 7","description":"alert 7","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287569319,"policy":"ALERT IF ( ANY TOPIC OUT_OF_SYNC_REPLICA_COUNT >= 1 )"}
 
+"id":null,"name":"alert 8","description":"alert 8","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287627413,"policy":"ALERT IF ( ANY TOPIC BYTES_IN_PER_SEC <= 120 )"}
+
+{"id":null,"name":"alert 9","description":"alert 9","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287659267,"policy":"ALERT IF ( LATENCY (topic=\".*\", consumer=\".*\") END_TO_END_LATENCY >= 120 )"}
+
+{"id":null,"name":"alert 10","description":"alert 10","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287706360,"policy":"ALERT IF ( ANY PRODUCER MILLISECONDS_LAPSED_SINCE_PRODUCER_WAS_ACTIVE >= 600000 )"}
+
+{"id":null,"name":"alert 11","description":"alert 11","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287749642,"policy":"ALERT IF ( ANY PRODUCER IS_PRODUCER_ACTIVE != true )"}
+
+{"id":null,"name":"alert 12","description":"alert 12","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287792099,"policy":"ALERT IF ( CLUSTER_REPLICATION (cluster=\".*\") REPLICATION_STATUS != ACTIVE )"}
+
+{"id":null,"name":"alert kafka connect weather","description":"alert kafka connect weather","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287836840,"policy":"ALERT IF ( CONSUMER (name=\"connect-weather\") IS_CONSUMER_ACTIVE = false )"}
+
+{"id":null,"name":"alert kafka connect itemprice","description":"alert kafka connect itemprice","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287878310,"policy":"ALERT IF ( CONSUMER (name=\"connect-itemprice\") IS_CONSUMER_ACTIVE != true )"}
+
+{"id":null,"name":"alert kafka connect producer-logs","description":"alert kafka connect producer-logs","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287929540,"policy":"ALERT IF ( PRODUCER (name=\"connector-producer-logs-0\") IS_PRODUCER_ACTIVE != true )"}
+
 # GET the list of alert policies created
 http://edge2ai-1.dim.local:9991/api/v1/admin/alertPolicy
 
