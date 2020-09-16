@@ -1,0 +1,1 @@
+{"id":null,"name":"alert kafka connect weather","description":"alert kafka connect weather","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287836840,"policy":"ALERT IF ( CONSUMER (name=\"connect-weather\") IS_CONSUMER_ACTIVE = false )"}
