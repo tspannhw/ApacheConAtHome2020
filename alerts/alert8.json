@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 8","description":"alert 8","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287627413,"policy":"ALERT IF ( ANY TOPIC BYTES_IN_PER_SEC <= 120 )"}
