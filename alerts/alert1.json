@@ -1,0 +1,1 @@
+{"id":null,"name":"alert 1","description":"alert 1","enabled":true,"version":1,"executionIntervalInMillis":60000,"executionDelayInMillis":300000,"notifierIds":[1],"timestamp":1600287180171,"policy":"ALERT IF ( CLUSTER ONLINE_BROKER_COUNT <= 0 )"}
