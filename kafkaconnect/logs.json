@@ -1,0 +1,10 @@
+{
+ "connector.class": "org.apache.kafka.connect.file.FileStreamSourceConnector",
+ "file": "/var/log/nifi/nifi-app.log",
+ "value.converter.passthrough.enabled": "true",
+ "tasks.max": "1",
+ "name": "logs",
+ "topic": "logs",
+ "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+ "key.converter": "org.apache.kafka.connect.storage.StringConverter"
+}
