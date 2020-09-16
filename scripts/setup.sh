@@ -75,6 +75,11 @@ HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /iextradingchart
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /stocks
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /cyber
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /warehouse/tablespace/managed/hive/
+
+# Need permissions for hive tables
+# Permission denied: user=nifi, access=EXECUTE, inode="/warehouse/tablespace/managed/hive/hv_stocks":hive:hive:drwxrwx---
+
 
 cd /opt/demo/ApacheConAtHome2020
 
