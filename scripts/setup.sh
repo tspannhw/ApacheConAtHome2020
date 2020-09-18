@@ -392,8 +392,21 @@ echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔�
 echo ""
 echo ""
 
+# Get Toolkit
+#wget https://archive.apache.org/dist/nifi/1.11.4/nifi-toolkit-1.11.4-bin.tar.gz
+#tar -xvf nifi-toolkit*.tar.gz
+#/opt/demo/ApacheConAtHome2020/scripts/nifi-toolkit-1.11.4/bin/cli.sh registry list-buckets -u http://edge2ai-1.dim.local:18080
+#registry create-flow -verbose -u http://edge2ai-1.dim.local:18080 -b 250a5ae5-ced8-4f4e-8b3b-01eb9d47a0d9 --flowName iotFlow
+#registry import-flow-version -verbose -u http://somesite.compute-1.amazonaws.com:18080 -f a5a4ac59-9aeb-416e-937f-e601ca8beba9 -i flows/iot-1.json
+# registry list-flows  -u http://ec2-35-171-154-174.compute-1.amazonaws.com:18080 -b 250a5ae5-ced8-4f4e-8b3b-01eb9d47a0d9
 # https://www.datainmotion.dev/2020/03/using-nifi-cli-to-restore-nifi-flows.html
 # https://www.datainmotion.dev/2019/09/backup-and-restore-nifi-registry.html
+
+# Get NiFi Python API
+# https://pypi.org/project/nipyapi/
+# already installed as part of My Setup
+# pip3 install nipyapi
+python3 loadflow.py
 
 # Final HDFS Check (demo only, use Apache Ranger in SDX for real workloads).
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
