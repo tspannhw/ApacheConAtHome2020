@@ -1,0 +1,9 @@
+ baseUrl=http://edge2ai-1.dim.local:18080
+ keystore=
+ keystoreType=
+ keystorePasswd=
+ keyPasswd=
+ truststore=
+ truststoreType=
+ truststorePasswd=
+ proxiedEntity=
