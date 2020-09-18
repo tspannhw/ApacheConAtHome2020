@@ -31,14 +31,13 @@ print("=====")
 if not sensor_bucket:
    sensor_bucket = versioning.create_registry_bucket('SensorFlows')
 
-dlx = versioning.get_flow_version(sensor_bucket.identifier, 'c8f05073-4f6f-42c1-8152-9047c4519419', version=None, export=true)
+dlx = versioning.get_flow_version(sensor_bucket.identifier, 'c8f05073-4f6f-42c1-8152-9047c4519419', version=None, export=True)
   
 # Export Flow Version
 xprt = versioning.export_flow_version(sensor_bucket.identifier, 'c8f05073-4f6f-42c1-8152-9047c4519419', version=None, file_path='/opt/demo/flow.json', mode='json')
 
-
-print(dlx)
-print(xprt)
+#print(dlx)
+#print(xprt)
 
 # Create Flow
 versionedFlow = versioning.create_flow(sensor_bucket.identifier, 'ApacheConDemos', flow_desc='ApacheConDemos', flow_type='Flow')
