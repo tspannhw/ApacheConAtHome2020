@@ -384,6 +384,17 @@ flink-yarn-session -tm 2048 -s 2 -d
 
 # flink-sql-client embedded -e /opt/demo/ApacheConAtHome2020/conf/sql-env.yaml
 
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo "Server NiFi Flow Setup"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo ""
+
+# https://www.datainmotion.dev/2020/03/using-nifi-cli-to-restore-nifi-flows.html
+# https://www.datainmotion.dev/2019/09/backup-and-restore-nifi-registry.html
+
 # Final HDFS Check (demo only, use Apache Ranger in SDX for real workloads).
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
 
