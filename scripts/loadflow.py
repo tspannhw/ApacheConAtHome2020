@@ -29,3 +29,15 @@ if not sensor_bucket:
 # Get NiFi root PG
 root_pg = canvas.get_process_group(canvas.get_root_pg_id(), 'id')
 
+# Create Flow
+versionedFlow = versioning.create_flow(sensor_bucket, 'ApacheConDemos', flow_desc='ApacheConDemos', flow_type='Flow')
+
+# Import Flow Version
+versionedFlowSnapshot = versioning.import_flow_version(sensor_bucket, flow_id=versionedFlow, flow_name='ApacheConDemos')
+
+# List Flows
+print(versioning.list_flows_in_bucket(sensor_bucket))
+
+#registry create-flow -verbose -u http://edge2ai-1.dim.local:18080 -b 250a5ae5-ced8-4f4e-8b3b-01eb9d47a0d9 --flowName iotFlow
+#registry import-flow-version -verbose -u http://somesite.compute-1.amazonaws.com:18080 -f a5a4ac59-9aeb-416e-937f-e601ca8beba9 -i flows/iot-1.json
+# registry list-flows  -u http://ec2-35-171-154-174.compute-1.amazonaws.com:18080 -b 250a5ae5-ced8-4f4e-8b3b-01eb9d47a0d9
