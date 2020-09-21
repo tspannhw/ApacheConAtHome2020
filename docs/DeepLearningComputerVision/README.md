@@ -18,3 +18,8 @@ Three RGB DotStar LEDs for colorful LED feedback.
 
 https://learn.adafruit.com/teachable-machine-raspberry-pi-tensorflow-camera?view=all
 https://github.com/ladyada/TensorFlow-Object-Detection-on-the-Raspberry-Pi
+https://teachablemachine.withgoogle.com/
+https://teachablemachine.withgoogle.com/train/audio
+https://teachablemachine.withgoogle.com/train/image
+https://learn.adafruit.com/running-tensorflow-lite-on-the-raspberry-pi-4?view=all
+
