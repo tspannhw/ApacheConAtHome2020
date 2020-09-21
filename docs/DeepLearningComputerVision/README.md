@@ -14,3 +14,7 @@ Two 3-pin JST STEMMA connectors that can be used to connect more buttons, a rela
 STEMMA QT plug-and-play I2C port, can be used with any of our 50+ I2C STEMMA QT boards, or can be used to connect to Grove I2C devices with an adapter cable.
 5-Way Joystick + Button for user interface and control.
 Three RGB DotStar LEDs for colorful LED feedback.
+
+
+https://learn.adafruit.com/teachable-machine-raspberry-pi-tensorflow-camera?view=all
+https://github.com/ladyada/TensorFlow-Object-Detection-on-the-Raspberry-Pi
