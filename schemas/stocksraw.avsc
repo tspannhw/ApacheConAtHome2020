@@ -1,0 +1,56 @@
+{
+  "type" : "record",
+  "name" : "stocksraw",
+  "fields" : [ {
+    "name" : "meta",
+    "type" : {
+      "type" : "record",
+      "name" : "meta",
+      "fields" : [ {
+        "name" : "symbol",
+    "type" : ["null","string"]
+      }, {
+        "name" : "interval",
+    "type" : ["null","string"]
+      }, {
+        "name" : "currency",
+    "type" : ["null","string"]
+      }, {
+        "name" : "exchange_timezone",
+    "type" : ["null","string"]
+      }, {
+        "name" : "exchange",
+    "type" : ["null","string"]
+      }, {
+        "name" : "type",
+    "type" : ["null","string"]
+      } ]
+    }
+  }, {
+    "name" : "values",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "values",
+        "fields" : [ {
+          "name" : "datetime",
+    "type" : ["null","string"]
+        }, {
+          "name" : "open",
+    "type" : ["null","string"]
+        }, {
+          "name" : "high",
+    "type" : ["null","string"]
+        }, {
+          "name" : "low",
+    "type" : ["null","string"]
+        }, {
+          "name" : "close",
+    "type" : ["null","string"]
+        }, {
+          "name" : "volume",
+    "type" : ["null","string"]
+        } ] } }
+      }]
+}
