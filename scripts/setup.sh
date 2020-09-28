@@ -406,7 +406,11 @@ echo ""
 # https://pypi.org/project/nipyapi/
 # already installed as part of My Setup
 # pip3 install nipyapi
-python3 loadflow.py
+# python3 loadflow.py
+
+# Restore NiFi Flow
+# Add parameter context and parameters
+# https://www.datainmotion.dev/2020/09/devops-working-with-parameter-contexts.html
 
 # Final HDFS Check (demo only, use Apache Ranger in SDX for real workloads).
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
