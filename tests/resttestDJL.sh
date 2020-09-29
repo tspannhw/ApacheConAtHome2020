@@ -1,0 +1,1 @@
+curl -X POST "http://localhost:10999/query" -H "accept: application/json" -H "Content-Type: application/json" -d '{"description":"Apache NiFi is a great project to watch sessions of at ApacheCon in 2020"}'
