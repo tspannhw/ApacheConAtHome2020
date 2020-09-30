@@ -11,12 +11,6 @@
     "name" : "friends_count",
     "type" : ["string","null"]
   }, {
-    "name" : "sentiment",
-    "type" : ["string","null"]
-  }, {
-    "name" : "geolongitude",
-    "type" : ["string","null"]
-  }, {
     "name" : "hashtags",
     "type" : ["string","null"]
   }, {
@@ -39,9 +33,6 @@
     "type" : ["string","null"]
   }, {
     "name" : "media_url",
-    "type" : ["string","null"]
-  }, {
-    "name" : "sentiment2",
     "type" : ["string","null"]
   }, {
     "name" : "retweet_count",
