@@ -1,0 +1,68 @@
+{
+  "name" : "sensors",
+  "description" : "",
+  "parameters" : [ {
+    "parameter" : {
+      "name" : "allquery",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT *\nFROM FLOWFILE"
+    }
+  }, {
+    "parameter" : {
+      "name" : "energytopic",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "energy"
+    }
+  }, {
+    "parameter" : {
+      "name" : "global_temperaturealerttopic",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "global_temperaturealert"
+    }
+  }, {
+    "parameter" : {
+      "name" : "kafkabrokers",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "edge2ai-1.dim.local:9092"
+    }
+  }, {
+    "parameter" : {
+      "name" : "scadaclientid",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "nifi-scada-data-remote"
+    }
+  }, {
+    "parameter" : {
+      "name" : "scadatopic",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "scada"
+    }
+  }, {
+    "parameter" : {
+      "name" : "sensordataclientid",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "nifi-sensor-data-local"
+    }
+  }, {
+    "parameter" : {
+      "name" : "tempquery",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * \nFROM FLOWFILE\nWHERE CAST(temperaturef as FLOAT) > 70\n"
+    }
+  }, {
+    "parameter" : {
+      "name" : "trendingtemperaturequery",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * \nFROM FLOWFILE\nWHERE CAST(temperaturef as FLOAT) > 60\n"
+    }
+  } ]
+}
