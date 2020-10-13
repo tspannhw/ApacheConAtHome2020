@@ -1,0 +1,130 @@
+{
+  "name" : "retail",
+  "description" : "",
+  "parameters" : [ {
+    "parameter" : {
+      "name" : "allquery",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * FROM FLOWFILE"
+    }
+  }, {
+    "parameter" : {
+      "name" : "allrecordssql",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * FROM FLOWFILE"
+    }
+  }, {
+    "parameter" : {
+      "name" : "energytopic",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "energy"
+    }
+  }, {
+    "parameter" : {
+      "name" : "importantsql",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * FROM FLOWFILE\nWHERE kernel_logs like '%SIGKILL%'"
+    }
+  }, {
+    "parameter" : {
+      "name" : "itempricetable",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "impala::default.itemprice"
+    }
+  }, {
+    "parameter" : {
+      "name" : "itsgettingHotInHere",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * FROM\nFLOWFILE\nWHERE CAST (temp_f as DOUBLE) > 80\nAND UPPER(location) LIKE '%NJ%'"
+    }
+  }, {
+    "parameter" : {
+      "name" : "kafkabrokers",
+      "description" : "was",
+      "sensitive" : false,
+      "value" : "edge2ai-1.dim.local:9092"
+    }
+  }, {
+    "parameter" : {
+      "name" : "kuduitempricetable",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "impala::default.itemprice"
+    }
+  }, {
+    "parameter" : {
+      "name" : "kuduservers",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "edge2ai-1.dim.local:7051"
+    }
+  }, {
+    "parameter" : {
+      "name" : "mobiledatakafkatopic",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "mobiledata"
+    }
+  }, {
+    "parameter" : {
+      "name" : "remote_price_minifi_url",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "http://192.168.1.71:9988/setPrice"
+    }
+  }, {
+    "parameter" : {
+      "name" : "schemaregistryurl",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "http://edge2ai-1.dim.local:7788/api/v1"
+    }
+  }, {
+    "parameter" : {
+      "name" : "splunktopic",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "splunklogs"
+    }
+  }, {
+    "parameter" : {
+      "name" : "stocktopics",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "iextradingnews,iextradingquote,iextradingchart"
+    }
+  }, {
+    "parameter" : {
+      "name" : "tempquery",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * \nFROM FLOWFILE\nWHERE CAST(temperaturef as FLOAT) > 70\n"
+    }
+  },   {
+    "parameter" : {
+      "name" : "trendingtemperaturequery",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "SELECT * \nFROM FLOWFILE\nWHERE CAST(temperaturef as FLOAT) > 60\n"
+    }
+  }, {
+    "parameter" : {
+      "name" : "url",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "https://api.twelvedata.com/time_series?symbol=CLDR&interval=1min&outputsize=5000"
+    }
+  }, {
+    "parameter" : {
+      "name" : "weathertopic",
+      "description" : "",
+      "sensitive" : false,
+      "value" : "weather"
+    }
+  } ]
