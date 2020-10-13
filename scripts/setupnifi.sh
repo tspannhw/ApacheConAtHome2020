@@ -35,10 +35,18 @@ do
 
 echo "Uploading Parameter File $f"
 
-/opt/demo/nifi-toolkit-1.12.0/bin/cli.sh nifi import-param-context -u http://localhost:8080 -i $f
+/opt/demo/nifi-toolkit-1.12.0/bin/cli.sh nifi import-param-context -u http://edge2ai-1.dim.local:8080 -i $f
 
 echo "Added."
 echo ""
 
 done
 
+echo ""
+echo ""
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+echo ""
+echo "Completed."
+echo ""
+echo "⏱  $(date +%H%Mhrs)"
+echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
