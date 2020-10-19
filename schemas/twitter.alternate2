@@ -1,0 +1,103 @@
+{
+  "type" : "record",
+  "name" : "twitter",
+  "fields" : [ {
+    "name" : "msg",
+    "type" : ["string","null"]
+  }, {
+    "name" : "unixtime",
+    "type" : ["string","null"]
+  }, {
+    "name" : "friends_count",
+    "type" : ["string","null"]
+  }, {
+    "name" : "hashtags",
+    "type" : ["string","null"]
+  }, {
+    "name" : "listed_count",
+    "type" : ["string","null"]
+  }, {
+    "name" : "tweet_id",
+    "type" : ["string","null"]
+  }, {
+    "name" : "user_name",
+    "type" : ["string","null"]
+  }, {
+    "name" : "favourites_count",
+    "type" : ["string","null"]
+  }, {
+    "name" : "source",
+    "type" : ["string","null"]
+  }, {
+    "name" : "placename",
+    "type" : ["string","null"]
+  }, {
+    "name" : "media_url",
+    "type" : ["string","null"]
+  }, {
+    "name" : "retweet_count",
+    "type" : ["string","null"]
+  }, {
+    "name" : "user_mentions_name",
+    "type" : ["string","null"]
+  }, {
+    "name" : "geo",
+    "type" : ["string","null"]
+  }, {
+    "name" : "urls",
+    "type" : ["string","null"]
+  }, {
+    "name" : "countryCode",
+    "type" : ["string","null"]
+  }, {
+    "name" : "user_url",
+    "type" : ["string","null"]
+  }, {
+    "name" : "place",
+    "type" : ["string","null"]
+  }, {
+    "name" : "timestamp",
+    "type" : ["string","null"]
+  }, {
+    "name" : "geolatitude",
+    "type" : ["string","null"]
+  }, {
+    "name" : "coordinates",
+    "type" : ["string","null"]
+  }, {
+    "name" : "handle",
+    "type" : ["string","null"]
+  }, {
+    "name" : "profile_image_url",
+    "type" : ["string","null"]
+  }, {
+    "name" : "time_zone",
+    "type" : ["string","null"]
+  }, {
+    "name" : "ext_media",
+    "type" : ["string","null"]
+  }, {
+    "name" : "statuses_count",
+    "type" : ["string","null"]
+  }, {
+    "name" : "followers_count",
+    "type" : ["string","null"]
+  }, {
+    "name" : "location",
+    "type" : ["string","null"]
+  }, {
+    "name" : "time",
+    "type" : ["string","null"]
+  }, {
+    "name" : "user_mentions",
+    "type" : ["string","null"]
+  }, {
+    "name" : "user_description",
+    "type" : ["string","null"]
+  }, 
+  {
+    "name" : "sentiment",
+    "type" : ["string","null"], "default": "null"
+  }
+]
+}
