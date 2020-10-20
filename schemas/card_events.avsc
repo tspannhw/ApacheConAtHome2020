@@ -35,7 +35,7 @@
     "doc" : "Type inferred from '\"685998ab-7614-4f1f-8b8c-29dd089cb490\"'"
   }, {
     "name" : "event_transaction_dt",
-    "type" : "string",
+    "type" : "long",
     "doc" : "Type inferred from '\"1574729003000\"'"
   }, {
     "name" : "event_transaction_type",
