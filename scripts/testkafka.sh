@@ -77,3 +77,16 @@ GROUP BY
   t.itemId, q.queryId, TUMBLE(q.event_time, INTERVAL '1' SECOND);
   
   
+SELECT * FROM (
+  SELECT * ,
+  ROW_NUMBER() OVER (
+    PARTITION BY window_start
+    ORDER BY num_transactions desc
+  ) AS rownum
+  FROM (
+    SELECT TUMBLE_START(event_time, INTERVAL '10' MINUTE) AS window_start, itemId, COUNT(*) AS num_transactions
+    FROM ItemTransactions
+    GROUP BY itemId, TUMBLE(event_time, INTERVAL '10' MINUTE)
+  )
+)
+WHERE rownum <=3;
