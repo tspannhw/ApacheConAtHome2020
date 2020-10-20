@@ -227,13 +227,19 @@
    ],
    "default": "null"
   },
-  {
+ {
    "name": "response",
-   "type": [
-    "string",
-    "null"
-   ],
-   "default": "null"
-  }
+   "type": {
+    "type": "record",
+    "name": "CDSWResponse",
+    "namespace": "com.cloudera.example",
+    "fields": [
+     {
+      "name": "response",
+      "type": ["string","null"]
+     }
+    ]
+   }
+ }
  ]
 }
