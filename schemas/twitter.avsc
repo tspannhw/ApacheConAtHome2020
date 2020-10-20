@@ -94,5 +94,27 @@
   }, {
     "name" : "user_description",
     "type" : ["string","null"]
-  } ]
+  },   
+  {
+    "name" : "sentiment",
+    "type" : ["string","null"], "default": "null"
+  }, 
+  {
+      "name": "response",
+      "doc": "response record",
+      "type": {
+        "type": "record",
+        "name": "CDSWResponse",
+        "namespace": "com.cloudera.example",
+        "doc": "CDSW Model response",
+        "fields": [
+          {
+            "name": "result",
+            "doc": "Sentiment Result",
+            "type": ["string","null"], "default": "null"
+          }
+        ]
+      }
+    }
+  ]
 }
