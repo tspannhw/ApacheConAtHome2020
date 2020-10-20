@@ -3,8 +3,7 @@
   "name" : "card_events",
   "fields" : [ {
     "name" : "event_id",
-    "type" : "int",
-    "doc" : "Type inferred from '20'"
+    "type" : "string"
   }, {
     "name" : "event_email_sender",
     "type" : "string",
@@ -35,7 +34,7 @@
     "doc" : "Type inferred from '\"685998ab-7614-4f1f-8b8c-29dd089cb490\"'"
   }, {
     "name" : "event_transaction_dt",
-    "type" : "long",
+    "type" : "float",
     "doc" : "Type inferred from '\"1574729003000\"'"
   }, {
     "name" : "event_transaction_type",
