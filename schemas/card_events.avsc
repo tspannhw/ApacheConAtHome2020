@@ -1,0 +1,45 @@
+{
+  "type" : "record",
+  "name" : "card_events",
+  "fields" : [ {
+    "name" : "event_id",
+    "type" : "int",
+    "doc" : "Type inferred from '20'"
+  }, {
+    "name" : "event_email_sender",
+    "type" : "string",
+    "doc" : "Type inferred from '\"rbulluckj@ameblo.jp\"'"
+  }, {
+    "name" : "event_cc_num",
+    "type" : "string",
+    "doc" : "Type inferred from '\"560224562826236798\"'"
+  }, {
+    "name" : "event_ip",
+    "type" : "string",
+    "doc" : "Type inferred from '\"43.48.129.14\"'"
+  }, {
+    "name" : "event_hash",
+    "type" : "string",
+    "doc" : "Type inferred from '\"7e1d90655e8e8fda04f8d0f0d246e6702ecd34a19f372a76c3dd6ceb2aec28a2\"'"
+  }, {
+    "name" : "event_amount",
+    "type" : "string",
+    "doc" : "Type inferred from '\"$464.46\"'"
+  }, {
+    "name" : "event_phone_num",
+    "type" : "string",
+    "doc" : "Type inferred from '\"540-942-0261\"'"
+  }, {
+    "name" : "event_transaction_id",
+    "type" : "string",
+    "doc" : "Type inferred from '\"685998ab-7614-4f1f-8b8c-29dd089cb490\"'"
+  }, {
+    "name" : "event_transaction_dt",
+    "type" : "string",
+    "doc" : "Type inferred from '\"1574729003000\"'"
+  }, {
+    "name" : "event_transaction_type",
+    "type" : "string",
+    "doc" : "Type inferred from '\"confirmation\"'"
+  } ]
+}
