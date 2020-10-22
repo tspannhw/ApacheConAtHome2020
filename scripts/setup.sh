@@ -178,75 +178,10 @@ echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔�
 echo ""
 
 # Atlas Flink Integration
-
-curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.local:31000/api/atlas/v2/types/typedefs' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "enumDefs": [],
-    "structDefs": [],
-    "classificationDefs": [],
-    "entityDefs": [
-        {
-            "name": "flink_application",
-            "superTypes": [
-                "Process"
-            ],
-            "serviceType": "flink",
-            "typeVersion": "1.0",
-            "attributeDefs": [
-                {
-                    "name": "id",
-                    "typeName": "string",
-                    "cardinality": "SINGLE",
-                    "isIndexable": true,
-                    "isOptional": false,
-                    "isUnique": true
-                },
-                {
-                    "name": "startTime",
-                    "typeName": "date",
-                    "cardinality": "SINGLE",
-                    "isIndexable": false,
-                    "isOptional": true,
-                    "isUnique": false
-                },
-                {
-                    "name": "endTime",
-                    "typeName": "date",
-                    "cardinality": "SINGLE",
-                    "isIndexable": false,
-                    "isOptional": true,
-                    "isUnique": false
-                },
-                {
-                    "name": "conf",
-                    "typeName": "map<string,string>",
-                    "cardinality": "SINGLE",
-                    "isIndexable": false,
-                    "isOptional": true,
-                    "isUnique": false
-                },
-                {
-                    "name": "inputs",
-                    "typeName": "array<string>",
-                    "cardinality": "LIST",
-                    "isIndexable": false,
-                    "isOptional": false,
-                    "isUnique": false
-                },
-                {
-                    "name": "outputs",
-                    "typeName": "array<string>",
-                    "cardinality": "LIST",
-                    "isIndexable": false,
-                    "isOptional": false,
-                    "isUnique": false
-                }
-            ]
-        }
-    ],
-    "relationshipDefs": []
-}'
+#
+#curl -k -u admin:supersecret1 --location --request POST 'http://edge2ai-1.dim.local:31000/api/atlas/v2/types/typedefs' \
+#--header 'Content-Type: application/json' \
+#--data-raw '{
 
 # Kafka Topics (SMM or NiFi could auto build)
 
