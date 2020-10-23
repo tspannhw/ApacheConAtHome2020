@@ -40,3 +40,8 @@ CREATE TABLE `twitterhive` (
   `user_mentions` STRING,
   `user_description` STRING
 );
+
+CREATE TABLE `globaltwitter` (
+     `friends_count` STRING,`tweet_id` STRING,  `source` STRING, `systemtime` STRING, `location` STRING, `sentiment` STRING
+);
+
