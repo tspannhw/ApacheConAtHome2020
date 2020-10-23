@@ -1,0 +1,49 @@
+{
+ "type": "record",
+ "name": "globaltwitter",
+ "fields": [
+  {
+   "name": "friends_count",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "tweet_id",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "source",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "systemtime",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "location",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "sentiment",
+   "type": [
+    "string",
+    "null"
+   ],
+   "default": "null"
+  }
+ ]
+}
