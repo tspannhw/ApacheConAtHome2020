@@ -1,5 +1,5 @@
 INSERT INTO globaltwitter 
-SELECT tweet_id, sentiment, location, `time` as systemtime, source, friends_count
+SELECT friends_count, tweet_id, source, `time` as systemtime, location, sentiment
 FROM twitter
 WHERE
     sentiment is not null;
