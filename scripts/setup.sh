@@ -158,7 +158,7 @@ for f in /opt/demo/ApacheConAtHome2020/schemas/*.avsc
 do 
 
 echo "Uploading Schema File $f"
-schemaname="`echo $f | awk -F'[/_.]' '{print $(NF-1)}'`"
+schemaname="`echo $f | awk -F'[/.]' '{print $(NF-1)}'`"
 echo "Schema [$schemaname]"
 echo ""
 
