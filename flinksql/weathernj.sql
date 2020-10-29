@@ -5,4 +5,4 @@ temperature_string, temp_f,temp_c,relative_humidity,wind_string,wind_dir,wind_de
 wind_kt, pressure_in,dewpoint_string,dewpoint_f,dewpoint_c
 FROM weather
 WHERE
-    `location` is not null and `location` <> 'null' and trim(`location`) <> '';
+    `location` is not null and `location` <> 'null' and trim(`location`) <> '' and `location` like 'NJ%';
