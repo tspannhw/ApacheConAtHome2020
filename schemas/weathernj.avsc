@@ -1,0 +1,81 @@
+{
+  "type": "record",
+  "name": "weathernj",
+  "fields": [
+   {
+    "name": "location",
+    "type": ["null","string"]
+   },
+   {
+    "name": "station_id",
+    "type": ["null","string"]
+   },
+   {
+    "name": "latitude",
+    "type": ["double"]
+   },
+   {
+    "name": "longitude",
+    "type": ["double"]
+   },
+   {
+    "name": "observation_time",
+    "type": ["null","string"]
+   },
+   {
+    "name": "weather",
+    "type": ["null","string"]
+   },
+   {
+    "name": "temperature_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "temp_f",
+    "type": ["double"]
+   },
+   {
+    "name": "temp_c",
+    "type": ["double"]
+   },
+   {
+    "name": "relative_humidity",
+    "type": ["int"]
+   },
+   {
+    "name": "wind_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "wind_dir",
+    "type": ["null","string"]
+   },
+   {
+    "name": "wind_degrees",
+    "type": ["int"]
+   },
+   {
+    "name": "wind_mph",
+    "type": ["double"]
+   },
+   {
+    "name": "wind_kt",
+    "type": ["int"]
+   },
+   {
+    "name": "pressure_in",
+    "type": ["double"]
+   },
+   {
+    "name": "dewpoint_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "dewpoint_f",
+    "type": ["double"]
+   },
+   {
+    "name": "dewpoint_c",
+    "type": ["double"]
+   }]
+}
