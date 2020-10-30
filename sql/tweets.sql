@@ -8,3 +8,6 @@ https://impala.apache.org/docs/build/html/topics/impala_datetime_functions.html#
 
 https://docs.cloudera.com/documentation/enterprise/latest/topics/impala_datetime_functions.html#datetime_functions__to_timestamp
 
+select from_unixtime(CAST(STRLEFT(unixtime,LENGTH(unixtime)-3) as bigint), 'yyyy-MM-dd HH:mm:ss'), unixtime, time, `timestamp`
+from sentiment_tweets
+where unixtime is not null
