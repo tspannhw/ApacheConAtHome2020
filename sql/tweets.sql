@@ -11,3 +11,14 @@ https://docs.cloudera.com/documentation/enterprise/latest/topics/impala_datetime
 select from_unixtime(CAST(STRLEFT(unixtime,LENGTH(unixtime)-3) as bigint), 'yyyy-MM-dd HH:mm:ss'), unixtime, time, `timestamp`
 from sentiment_tweets
 where unixtime is not null
+
+                              select dayofweek(from_unixtime(CAST(STRLEFT(unixtime,LENGTH(unixtime)-3) as bigint), 'yyyy-MM-dd HH:mm:ss')), 
+count(dayofweek(from_unixtime(CAST(STRLEFT(unixtime,LENGTH(unixtime)-3) as bigint), 'yyyy-MM-dd HH:mm:ss'))) as Count 
+from sentiment_tweets 
+group by dayofweek(from_unixtime(CAST(STRLEFT(unixtime,LENGTH(unixtime)-3) as bigint), 'yyyy-MM-dd HH:mm:ss'))
+                                 
+select 'Privacy Rule X2YZ applies', count(user_name) from rawpostsunicef group by user_name order by count(user_name) DESC
+                                 
+ select sentiment, count(sentiment) from rawpostsunicef group by sentiment
+                                 
+                                 
