@@ -6,3 +6,8 @@ order by observation_time desc;
 select upc, originstore, updatedate, itemdescription, brandname, price
 from itemprice
 order by updatedate desc;
+
+
+select upc, updatedate, itemdescription, price
+from itemprice
+order by updatedate desc;
