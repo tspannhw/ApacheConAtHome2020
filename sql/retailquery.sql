@@ -11,3 +11,9 @@ order by updatedate desc;
 select upc, updatedate, itemdescription, price
 from itemprice
 order by updatedate desc;
+
+
+select upc, updatedate, itemdescription, nvl(trim(price),"0.00") as price
+from itemprice
+where price is not null and trim(price) <> ''
+order by updatedate desc;
