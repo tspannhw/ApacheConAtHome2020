@@ -2,8 +2,9 @@
 <head>
 <title>NiFi Web Page For Kafka</title>
 <body bgcolor="white" text="black">
-
-Receiving Updated Kafka Data:
+<B>Kafka to Websockets Demo</b>
+<br><br>
+<br><b>Receiving Updated Kafka Data:</b>
 <br><br>
 <div id="results"> </div>
 
@@ -17,22 +18,21 @@ websocket = new WebSocket(wsUri);
 websocket.onopen = function(evt) {console.log('connected')};
 websocket.onerror = function(evt) {console.log('ERR', evt)};
 websocket.onmessage = function(evt) {
-    console.log(evt)
     var dataPoints = JSON.parse(evt.data);
 
     var output = document.getElementById("results");
     var dataBuffer = "<p>";
- 
+
     for(var i=0;i<dataPoints.length;i++)
     {
-        dataBuffer += "Location: " + dataPoints[i].location +
+        dataBuffer += " <img src=\"" + dataPoints[i].icon_url_base + dataPoints[i].icon_url_name + "\"> &nbsp;" +  dataPoints[i].location +
                       dataPoints[i].station_id  + "@" +  dataPoints[i].latitude   + ":" +
                       dataPoints[i].longitude  + "@" +  dataPoints[i].observation_time +
                       dataPoints[i].temperature_string + "," + dataPoints[i].relative_humidity + "," +
                       dataPoints[i].wind_string +"<br>";
 
-    }   
-    output.innerHTML = outputInnerHTML +  dataBuffer + "</p><br>";
+    }
+    output.innerHTML = output.InnerHTML +  dataBuffer + "</p><br>";
 };
 
 </script>
