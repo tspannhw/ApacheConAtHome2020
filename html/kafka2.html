@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+#results {
+    height: 100ex;
+    overflow: auto;
+    border: 1px solid gray;
+}
+</style>
+<title>NiFi Web Page For Kafka</title>
+</head>
+<body bgcolor="white" text="black">
+<B>Kafka to Websockets Demo</b>
+<br><br>
+<br><b>Receiving Updated Kafka Data:</b>
+<br><br>
+    <input type="text" id="kafkamessage">
+    <input type="button" id="send" value="Send">
+
+<br><br>
+<div id="results"> </div>
+
+<br><br>
+
+<script>
+function sendMessage(type, payload) {
+	websocket.send(makeMessage(type, payload));
+}
+
+function makeMessage(type, payload) {
+	return JSON.stringify({
+		'type': type,
+		'payload': payload
+	});
+}
+
+var wsUri = "ws://edge2ai-1.dim.local:9091/test";
+
+websocket = new WebSocket(wsUri);
+websocket.onopen = function(evt) {
+
+    sendMessage('publish', {
+        "message": document.getElementById("kafkamessage")
+    });
+
+};
+websocket.onerror = function(evt) {console.log('ERR', evt)};
+websocket.onmessage = function(evt) {
+    var dataPoints = JSON.parse(evt.data);
+
+    var output = document.getElementById("results");
+    var dataBuffer = "<p>";
+ 
+    for(var i=0;i<dataPoints.length;i++)
+    {
+        dataBuffer += " <img src=\"" + dataPoints[i].icon_url_base + dataPoints[i].icon_url_name + "\"> &nbsp;" +  dataPoints[i].location + 
+                      dataPoints[i].station_id  + "@" +  dataPoints[i].latitude   + ":" +
+                      dataPoints[i].longitude  + "@" +  dataPoints[i].observation_time +
+                      dataPoints[i].temperature_string + "," + dataPoints[i].relative_humidity + "," +
+                      dataPoints[i].wind_string +"<br>";     
+
+    }   
+    output.innerHTML = output.innerHTML +  dataBuffer + "</p><br>";
+};
+
+</script>
+
+&copy; 2020 Tim Spann
+</body>
+</html>
