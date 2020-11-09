@@ -20,13 +20,23 @@ websocket.onmessage = function(evt) {
     console.log(evt)
     var dataPoints = JSON.parse(evt.data);
 
-var output = document.getElementById("results");
-	output.innerHTML = "<p>" + dataPoints + "</p>";
+    var output = document.getElementById("results");
+    var dataBuffer = "<p>";
+ 
+    for(var i=0;i<dataPoints.length;i++)
+    {
+        dataBuffer += "Location: " + dataPoints[i].location +
+                      dataPoints[i].station_id  + "@" +  dataPoints[i].latitude   + ":" +
+                      dataPoints[i].longitude  + "@" +  dataPoints[i].observation_time +
+                      dataPoints[i].temperature_string + "," + dataPoints[i].relative_humidity + "," +
+                      dataPoints[i].wind_string +"<br>";
+
+    }   
+    output.innerHTML = outputInnerHTML +  dataBuffer + "</p><br>";
 };
 
 </script>
 
-<div id="myGraph">
-</div>
+&copy; 2020 Tim Spann
 </body>
 </html>
