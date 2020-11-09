@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>NiFi Web Page For Kafka</title>
+<body bgcolor="white" text="black">
+
+Receiving Updated Kafka Data:
+<br><br>
+<div id="results"> </div>
+
+<br><br>
+
+<script>
+
+var wsUri = "ws://edge2ai-1.dim.local:9091/test";
+
+websocket = new WebSocket(wsUri);
+websocket.onopen = function(evt) {console.log('connected')};
+websocket.onerror = function(evt) {console.log('ERR', evt)};
+websocket.onmessage = function(evt) {
+    console.log(evt)
+    var dataPoints = JSON.parse(evt.data);
+
+var output = document.getElementById("results");
+	output.innerHTML = "<p>" + dataPoints + "</p>";
+};
+
+</script>
+
+<div id="myGraph">
+</div>
+</body>
+</html>
