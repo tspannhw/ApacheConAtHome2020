@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "webrequests",
+  "fields" : [ {
+    "name" : "msgdate",
+    "type" : "string",
+    "doc" : "Type inferred from '\"1605121973527\"'"
+  }, {
+    "name" : "controllerid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"8279e5e7-767e-33e2-b8b5-a5e81b5005b6\"'"
+  }, {
+    "name" : "endpointid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"/test\"'"
+  }, {
+    "name" : "remoteaddress",
+    "type" : "string",
+    "doc" : "Type inferred from '\"/98.110.25.253:53897\"'"
+  }, {
+    "name" : "sessionid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"0792985c-5b88-401c-80bd-d3c52853a242\"'"
+  }, {
+    "name" : "message",
+    "type" : "string",
+    "doc" : "Type inferred from '\"Example Kafka Message\"'"
+  }, {
+    "name" : "uuid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"9518c60d-b032-4ef6-9db8-572287e6c5bc\"'"
+  }, {
+    "name" : "localaddress",
+    "type" : "string",
+    "doc" : "Type inferred from '\"ec2-54-164-95-254.compute-1.amazonaws.com/10.0.1.251:9091\"'"
+  } ]
+}
