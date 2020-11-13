@@ -1,4 +1,5 @@
 {
+  "namespace": "com.cloudera.streaming.examples.flink.data",
   "type": "record",
   "name": "weather",
   "fields": [
