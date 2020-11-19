@@ -13,8 +13,12 @@ echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔�
 echo ""
 echo ""
 
+# Run NiFi setupnifi.sh
+
 # TODO
 # Build NiFi Atlas Connection
+# https://www.datainmotion.dev/2020/02/connecting-apache-nifi-to-apache-atlas.html
+
 # Add NiFi SQL Reporting Tasks for JVM, Provenance, ...
 # Add NiFi HTTP Listener for Kafka Alerts
 # Build Kafka Alerts / Notifier
