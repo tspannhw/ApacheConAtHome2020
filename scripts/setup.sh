@@ -363,6 +363,10 @@ echo ""
 # Final HDFS Check (demo only, use Apache Ranger in SDX for real workloads).
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
 
+# Stop MiNiFi and EFM
+/opt/cloudera/cem/minifi-0.6.0.1.2.1.0-24/bin/minifi.sh stop
+/opt/cloudera/cem/efm/bin/efm.sh stop
+
 echo ""
 echo ""
 echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
