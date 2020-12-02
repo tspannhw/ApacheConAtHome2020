@@ -40,6 +40,8 @@ git clone https://github.com/tspannhw/meetup-sensors
 git clone https://github.com/tspannhw/FlinkSQLDemo
 git clone https://github.com/tspannhw/ApacheConAtHome2020
 git clone https://github.com/tspannhw/retail-dynamic-shelf-pricing
+git clone https://github.com/tspannhw/SmartWeather
+git clone https://github.com/tspannhw/ClouderaPublicCloudCDFWorkshop
 
 chmod -R 777 /opt/demo/FlinkSQLDemo
 chmod -R 777 /opt/demo/meetup-sensors
