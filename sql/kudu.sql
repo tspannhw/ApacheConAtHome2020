@@ -195,15 +195,12 @@ CREATE TABLE stocks
   `close` STRING,
   `high` STRING,
   `volume` STRING,
-  `ts`
-  `dt`	
+  `ts` TIMESTAMP,
+  `dt`	 TIMESTAMP,
   `low` STRING,
 PRIMARY KEY (uuid,`datetime`) ) 
 PARTITION BY HASH PARTITIONS 4 
 STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
-
-# {"symbol": "AMZN", "uuid": "1116b173-4550-401e-888b-045db7309e43", "ts": 1607617835457, "dt": 1579445220000, "datetime": "1579445220000", "open": "3117.76001", "close": "3117.52539", "high": "3117.76001", "volume": "1993", "low": "3117.02002"}
-
 
 
 CREATE TABLE IF NOT EXISTS sentiment_tweets 
