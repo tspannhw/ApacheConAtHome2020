@@ -1,0 +1,100 @@
+{
+ "type": "record",
+ "name": "stockalerts",
+ "fields": [
+  {
+   "name": "symbol",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+  {
+   "name": "uuid",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+  {
+   "name": "ts",
+   "type": [
+    "long"
+   ],
+   "default": 1,
+   "logicalType": "timestamp-millis"
+  },
+  {
+   "name": "dt",
+   "type": [
+    "long"
+   ],
+   "default": 1,
+   "logicalType": "timestamp-millis"
+  },
+  {
+   "name": "datetime",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+  {
+   "name": "open",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+  {
+   "name": "close",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+  {
+   "name": "high",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+  {
+   "name": "volume",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+  {
+   "name": "low",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+     {
+   "name": "message",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+        {
+   "name": "alertcode",
+   "type": [
+    "null",
+    "string"
+   ]
+  },
+        {
+   "name": "alerttime",
+   "type": [
+    "long"
+   ],
+   "default": 1,
+   "logicalType": "timestamp-millis"
+  }
+ ]
+}
