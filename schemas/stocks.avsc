@@ -2,8 +2,8 @@
 "fields" : [ 
 { "name" : "symbol", "type" : ["null", "string"]}, 
 { "name" : "uuid", "type" : ["null", "string"]}, 
-{ "name" : "ts", "type" : "long", "logicalType": "timestamp-millis"},
-{ "name" : "dt", "type" : "long", "logicalType": "timestamp-millis"},
+{ "name" : "ts", "type" : ["long"], "default": 1, "logicalType": "timestamp-millis"},
+{ "name" : "dt", "type" : ["long"], "default": 1, "logicalType": "timestamp-millis"},
 { "name" : "datetime", "type" : ["null", "string"]}, 
 { "name" : "open", "type" : ["null", "string"]}, 
 { "name" : "close", "type" : ["null", "string"]}, 
