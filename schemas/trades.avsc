@@ -1,0 +1,49 @@
+{
+  "type" : "record",
+  "name" : "trades",
+  "fields" : [ {
+    "name" : "volume",
+    "type" : "string",
+    "doc" : "Type inferred from '\"4\"'"
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "doc" : "Type inferred from '\"IBM\"'"
+  }, {
+    "name" : "msgdate",
+    "type" : "string",
+    "doc" : "Type inferred from '\"1607720024191\"'"
+  }, {
+    "name" : "controllerid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"531bba55-0176-1000-ffff-ffffff2fbf7b\"'"
+  }, {
+    "name" : "endpointid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"nifi-stock-reader\"'"
+  }, {
+    "name" : "remoteaddress",
+    "type" : "string",
+    "doc" : "Type inferred from '\"ws.finnhub.io/34.71.182.72:443\"'"
+  }, {
+    "name" : "sessionid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"5e033d4b-0fca-43e5-8f19-461077669f81\"'"
+  }, {
+    "name" : "lastprice",
+    "type" : "string",
+    "doc" : "Type inferred from '\"124.8\"'"
+  }, {
+    "name" : "uuid",
+    "type" : "string",
+    "doc" : "Type inferred from '\"35b58ce4-f2c7-4fac-b2b9-d17330d855c7\"'"
+  }, {
+    "name" : "timestamp",
+    "type" : "string",
+    "doc" : "Type inferred from '\"1607719500785\"'"
+  }, {
+    "name" : "localaddress",
+    "type" : "string",
+    "doc" : "Type inferred from '\"/10.0.1.187:41190\"'"
+  } ]
+}
