@@ -42,7 +42,9 @@ git clone https://github.com/tspannhw/ApacheConAtHome2020
 git clone https://github.com/tspannhw/retail-dynamic-shelf-pricing
 git clone https://github.com/tspannhw/SmartWeather
 git clone https://github.com/tspannhw/ClouderaPublicCloudCDFWorkshop
+git clone https://github.com/tspannhw/SmartStocks
 
+chmod -R 777 /opt/demo/SmartStocks
 chmod -R 777 /opt/demo/FlinkSQLDemo
 chmod -R 777 /opt/demo/meetup-sensors
 chmod -R 777 /opt/demo/ApacheConAtHome2020
@@ -368,6 +370,9 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
 # Stop MiNiFi and EFM
 /opt/cloudera/cem/minifi-0.6.0.1.2.1.0-24/bin/minifi.sh stop
 /opt/cloudera/cem/efm/bin/efm.sh stop
+
+# Run NiFi Parms Load
+source /opt/demo/ApacheConAtHome2020/scripts/setupnifi.sh
 
 echo ""
 echo ""
