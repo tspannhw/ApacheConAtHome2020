@@ -25,7 +25,7 @@ echo "Download NiFi Toolkit"
 #
 cd /opt/demo
 wget https://apache.claz.org/nifi/1.12.1/nifi-toolkit-1.12.1-bin.tar.gz
-tar -xvf nifi-toolkit-1.12.1-bin.tar
+tar -xvf /opt/demo/nifi-toolkit-1.12.1-bin.tar.gz 
 
 echo "Load Parameter Contexts"
 
