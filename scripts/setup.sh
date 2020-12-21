@@ -88,6 +88,8 @@ HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /iextradingquote
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /iextradingchart
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /stocks
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir -p /cyber
+HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/weatherapp
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/weatherapp
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /warehouse/tablespace/managed/hive/
 
