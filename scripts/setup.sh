@@ -376,6 +376,11 @@ HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /
 # Run NiFi Parms Load
 source /opt/demo/ApacheConAtHome2020/scripts/setupnifi.sh
 
+# Get Postgresql jdbc
+cd /opt/demo
+
+wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
+
 echo ""
 echo ""
 echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
