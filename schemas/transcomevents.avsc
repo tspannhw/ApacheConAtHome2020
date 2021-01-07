@@ -1,0 +1,25 @@
+{
+ "type": "record",
+ "name": "transcomevents",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "title",
+   "type": ["string","null"]
+  },
+  {
+   "name": "description",
+   "type": ["string","null"]
+  },
+  {
+   "name": "pubDate",
+   "type": ["string","null"]
+  },
+  {
+   "name": "point",
+   "type": ["string","null"]
+  },
+  { "name" : "uuid", "type" : ["null", "string"]}, 
+{ "name" : "ts", "type" : ["long"], "default": 1, "logicalType": "timestamp-millis"}
+ ]
+}
