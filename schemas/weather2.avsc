@@ -1,0 +1,156 @@
+{
+  "type": "record",
+  "namespace": "com.cloudera.streaming.examples.flink.data",
+  "name": "weather2",
+  "fields": [
+   {
+    "name": "credit",
+    "type": ["null","string"]
+   },
+   {
+    "name": "credit_URL",
+    "type": ["null","string"]
+   },
+   {
+    "name": "image",
+    "type": {
+     "type": "record",
+     "name": "image",
+     "fields": [
+      {
+       "name": "url",
+    "type": ["null","string"]
+      },
+      {
+       "name": "title",
+    "type": ["null","string"]
+      },
+      {
+       "name": "link",
+    "type": ["null","string"]
+      }
+     ]
+    },
+    "doc": "Type inferred from '{\"url\":\"http://weather.gov/images/xml_logo.gif\",\"title\":\"NOAA's National Weather Service\",\"link\":\"http://weather.gov\"}'"
+   },
+   {
+    "name": "suggested_pickup",
+    "type": ["null","string"]
+   },
+   {
+    "name": "suggested_pickup_period",
+    "type": "int"
+   },
+   {
+    "name": "location",
+    "type": ["null","string"]
+   },
+   {
+    "name": "station_id",
+    "type": ["null","string"]
+   },
+   {
+    "name": "latitude",
+    "type": ["double"]
+   },
+   {
+    "name": "longitude",
+    "type": ["double"]
+   },
+   {
+    "name": "observation_time",
+    "type": ["null","string"]
+   },
+   {
+    "name": "observation_time_rfc822",
+    "type": ["null","string"]
+   },
+   {
+    "name": "weather",
+    "type": ["null","string"]
+   },
+   {
+    "name": "temperature_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "temp_f",
+    "type": ["double"]
+   },
+   {
+    "name": "temp_c",
+    "type": ["double"]
+   },
+   {
+    "name": "relative_humidity",
+    "type": ["int"]
+   },
+   {
+    "name": "wind_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "wind_dir",
+    "type": ["null","string"]
+   },
+   {
+    "name": "wind_degrees",
+    "type": ["int"]
+   },
+   {
+    "name": "wind_mph",
+    "type": ["double"]
+   },
+   {
+    "name": "wind_kt",
+    "type": ["int"]
+   },
+   {
+    "name": "pressure_in",
+    "type": ["double"]
+   },
+   {
+    "name": "dewpoint_string",
+    "type": ["null","string"]
+   },
+   {
+    "name": "dewpoint_f",
+    "type": ["double"]
+   },
+   {
+    "name": "dewpoint_c",
+    "type": ["double"]
+   },
+   {
+    "name": "visibility_mi",
+    "type": ["double"]
+   },
+   {
+    "name": "icon_url_base",
+    "type": ["null","string"]
+   },
+   {
+    "name": "two_day_history_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "icon_url_name",
+    "type": ["null","string"]
+   },
+   {
+    "name": "ob_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "disclaimer_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "copyright_url",
+    "type": ["null","string"]
+   },
+   {
+    "name": "privacy_policy_url",
+    "type": ["null","string"]
+   }]
+}
