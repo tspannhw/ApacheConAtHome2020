@@ -76,9 +76,9 @@ echo "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔�
 
 # List / Start / Check Process Groups
 
-REM nifi pg-list -u http://edge2ai-1.dim.local:8080   
-REM nifi pg-start -u http://edge2ai-1.dim.local:8080 -verbose -pgid a8e90c68-0e06-3421-9701-c93e1b4d0647
-REM nifi pg-status  -u http://edge2ai-1.dim.local:8080 -verbose -pgid a8e90c68-0e06-3421-9701-c93e1b4d0647  
+# nifi pg-list -u http://edge2ai-1.dim.local:8080   
+# nifi pg-start -u http://edge2ai-1.dim.local:8080 -verbose -pgid a8e90c68-0e06-3421-9701-c93e1b4d0647
+# nifi pg-status  -u http://edge2ai-1.dim.local:8080 -verbose -pgid a8e90c68-0e06-3421-9701-c93e1b4d0647  
 
 
 # Rest Checks
