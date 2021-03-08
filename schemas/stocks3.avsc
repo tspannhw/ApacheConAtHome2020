@@ -1,0 +1,60 @@
+{
+ "type": "record",
+ "name": "stocks3",
+ "fields": [
+  {
+   "name": "symbol",
+   "type":
+    "string"
+  },
+  {
+   "name": "uuid",
+   "type":
+    "string"
+  },
+  {
+   "name": "ts",
+   "type":
+    "long",
+   "default": 1
+  },
+  {
+   "name": "dt",
+   "type": 
+    "long"
+   ,
+   "default": 1
+  },
+  {
+   "name": "datetime",
+   "type": 
+    "string"
+   
+  },
+  {
+   "name": "open",
+   "type":
+    "string"
+  },
+  {
+   "name": "close",
+   "type":
+    "string"
+  },
+  {
+   "name": "high",
+   "type":
+    "string"
+  },
+  {
+   "name": "volume",
+   "type":
+    "string"
+  },
+  {
+   "name": "low",
+   "type":
+    "string"
+  }
+ ]
+}
