@@ -7,6 +7,7 @@
  "value.converter.passthrough.enabled": "false",
  "hdfs.output": "/tmp/stocks/",
  "output.avro.passthrough.enabled": "false",
+ "enhanced.avro.schema.support": "true",
  "hadoop.conf.path": "file:///etc/hadoop/conf",
  "name": "stocks",
  "output.writer": "com.cloudera.dim.kafka.connect.hdfs.parquet.ParquetPartitionWriter",
