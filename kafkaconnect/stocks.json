@@ -1,4 +1,3 @@
-
 {
  "connector.class": "com.cloudera.dim.kafka.connect.hdfs.HdfsSinkConnector",
  "hdfs.uri": "hdfs://edge2ai-1.dim.local:8020",
@@ -6,11 +5,12 @@
  "topics": "stocks",
  "value.converter.schema.registry.url": "http://edge2ai-1.dim.local:7788/api/v1",
  "value.converter.passthrough.enabled": "true",
+ "value.converter.schemas.enable": "false",
  "hdfs.output": "/tmp/stocksavro/",
- "output.avro.passthrough.enabled": "true",
+ "output.parquet.passthrough.enabled": "true",
  "hadoop.conf.path": "file:///etc/hadoop/conf",
  "name": "stocks",
- "output.writer": "com.cloudera.dim.kafka.connect.partition.writers.avro.AvroPartitionWriter",
+ "output.writer": "com.cloudera.dim.kafka.connect.hdfs.parquet.ParquetPartitionWriter",
  "value.converter": "com.cloudera.dim.kafka.connect.converts.AvroConverter",
  "output.storage": "com.cloudera.dim.kafka.connect.hdfs.HdfsPartitionStorage",
  "key.converter": "org.apache.kafka.connect.storage.StringConverter"
