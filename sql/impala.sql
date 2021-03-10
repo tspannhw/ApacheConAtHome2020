@@ -13,3 +13,6 @@ CREATE EXTERNAL TABLE stocksparquet
 PRIMARY KEY (uuid,`datetime`) ) 
 STORED AS PARQUET
 LOCATION '/tmp/stocks/stocks3';
+
+
+# Kafka Connect to parquet requires a schema without union types so no Nulls and no timestamps
