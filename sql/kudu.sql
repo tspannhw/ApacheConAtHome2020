@@ -15,6 +15,17 @@ TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
 
 	
 
+CREATE TABLE clouderastatus ( 
+   uuid STRING,`ts` TIMESTAMP,  
+  title STRING, 
+  pubdate STRING, 
+  link STRING,
+  description STRING,
+  guid STRING,
+PRIMARY KEY (uuid,ts ) 
+PARTITION BY HASH PARTITIONS 4 
+STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
+
 CREATE TABLE transcomevents ( 
 uuid STRING, `ts` TIMESTAMP,  
 `title` STRING, `description` STRING, 
