@@ -22,7 +22,7 @@ CREATE TABLE clouderastatus (
   link STRING,
   description STRING,
   guid STRING,
-PRIMARY KEY (uuid,ts ) 
+PRIMARY KEY (uuid,ts ) )
 PARTITION BY HASH PARTITIONS 4 
 STORED AS KUDU TBLPROPERTIES ('kudu.num_tablet_replicas' = '1');
 
